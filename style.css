@@ -147,18 +147,6 @@ img {
   flex: 1;
 }
 
-.badge-offre {
-  background-color: #ffdf9e;
-  color: #574000;
-  padding: 5px 12px;
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
 .hero-texte h1 {
   font-size: 48px;
   margin-bottom: 20px;
