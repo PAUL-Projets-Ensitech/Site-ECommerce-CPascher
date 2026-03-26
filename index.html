@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CPasCher - CDiscount en beaucoup moins cher</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="barre-navigation">
+        <div class="logo">CPasCher</div>
+        
+        <div class="liens-navigation">
+            <a href="#">Electro</a>
+            <a href="#">Informatique</a>
+            <a href="#">Maison</a>
+            <a href="#">Bricolage</a>
+            <a href="#">Jardin</a>
+            <a href="#">Mode</a>
+        </div>
+        
+        <div class="conteneur-recherche">
+            <input type="text" class="champ-recherche" placeholder="Rechercher un produit, une marque..."/>
+            <span class="icone-recherche">🔎</span>
+        </div>
+        
+        <div class="actions-navigation">
+            <button class="bouton-icone" id="bouton-profil">👤</button>
+            <button class="bouton-icone" id="bouton-panier-icone">🛒<span class="badge" id="panier-badge">0</span></button>
+        </div>
+    </nav>
+
+    <!-- Section Hero (Haut de page) -->
+    <section class="hero">
+        <div class="hero-contenu">
+            <div class="hero-texte">
+                <span class="badge-offre">Offre Exclusive</span>
+                <h1>C'est CDiscount en beaucoup moins cher !</h1>
+                <p>Économisez jusqu'à -70% sur les plus grandes marques de tech et maison.</p>
+                <div class="hero-boutons">
+                    <button class="bouton bouton-primaire">Profiter des offres</button>
+                    <button class="bouton bouton-secondaire">Voir le catalogue</button>
+                </div>
+            </div>
+            
+            <div class="hero-conteneur-image">
+                <img src="https://placehold.co/600x400/3732ff/FFFFFF/png?text=Image à venir" alt="Gadgets high-tech" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Catégories -->
+    <section class="categories">
+        <div class="categories-conteneur">
+            <div class="categorie-element">
+                <div class="cercle-icone">🔌</div>
+                <span class="categorie-nom">Electronique</span>
+            </div>
+            <div class="categorie-element">
+                <div class="cercle-icone">💻</div>
+                <span class="categorie-nom">Informatique</span>
+            </div>
+            <div class="categorie-element">
+                <div class="cercle-icone">🏠</div>
+                <span class="categorie-nom">Maison</span>
+            </div>
+            <div class="categorie-element">
+                <div class="cercle-icone">🌿</div>
+                <span class="categorie-nom">Jardin</span>
+            </div>
+            <div class="categorie-element">
+                <div class="cercle-icone">👕</div>
+                <span class="categorie-nom">Mode</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Ventes Flash -->
+    <section class="ventes-flash">
+        <div class="section-conteneur">
+            <div class="section-entete">
+                <div class="section-titre">
+                    <h2>⚡️ Ventes Flash</h2>
+                    <p>Prix imbattables, stocks très limités.</p>
+                </div>
+                <div class="compte-a-rebours">
+                    <span class="compte-a-rebours-label">Finit dans</span>
+                    <span class="compte-a-rebours-valeur">02h:45m:12s</span>
+                </div>
+            </div>
+            
+            <div class="grille-produits">
+                <!-- Produit 1 -->
+                <div class="carte-produit">
+                    <div class="conteneur-image-produit">
+                        <span class="etiquette-reduction">-35%</span>
+                        <img src="https://placehold.co/300x300/e0e0e0/000000/png?text=MacBook" alt="MacBook">
+                    </div>
+                    <h3 class="nom-produit">MacBook Air M2 13" Gris Sidéral - 256Go SSD</h3>
+                    <div class="prix-produit">
+                        <span class="prix">999,00 €</span>
+                        <span class="ancien-prix">1199,00 €</span>
+                    </div>
+                    <button class="bouton-panier">🛒 Ajouter au panier</button>
+                </div>
+                
+                <!-- Produit 2 -->
+                <div class="carte-produit">
+                    <div class="conteneur-image-produit">
+                        <span class="etiquette-reduction">-15%</span>
+                        <img src="https://placehold.co/300x300/e0e0e0/000000/png?text=iPhone" alt="iPhone">
+                    </div>
+                    <h3 class="nom-produit">iPhone 15 Pro Max 256Go Titane Naturel</h3>
+                    <div class="prix-produit">
+                        <span class="prix">1249,00 €</span>
+                        <span class="ancien-prix">1479,00 €</span>
+                    </div>
+                    <button class="bouton-panier">🛒 Ajouter au panier</button>
+                </div>
+                
+                <!-- Produit 3 -->
+                <div class="carte-produit">
+                    <div class="conteneur-image-produit">
+                        <span class="etiquette-reduction">-50%</span>
+                        <img src="https://placehold.co/300x300/e0e0e0/000000/png?text=Espresso" alt="Machine Espresso">
+                    </div>
+                    <h3 class="nom-produit">Machine Espresso Automatique Broyeur Intégré</h3>
+                    <div class="prix-produit">
+                        <span class="prix">299,99 €</span>
+                        <span class="ancien-prix">599,00 €</span>
+                    </div>
+                    <button class="bouton-panier">🛒 Ajouter au panier</button>
+                </div>
+                
+                <!-- Produit 4 -->
+                <div class="carte-produit">
+                    <div class="conteneur-image-produit">
+                        <span class="etiquette-reduction">-40%</span>
+                        <img src="https://placehold.co/300x300/e0e0e0/000000/png?text=Canap%C3%A9" alt="Canapé">
+                    </div>
+                    <h3 class="nom-produit">Canapé Angle Scandinave Velours 4 Places</h3>
+                    <div class="prix-produit">
+                        <span class="prix">449,00 €</span>
+                        <span class="ancien-prix">749,00 €</span>
+                    </div>
+                    <button class="bouton-panier">🛒 Ajouter au panier</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Promo (Bento Grid) -->
+    <section class="section-promo">
+        <div class="section-conteneur">
+            <div class="section-titre">
+                <h2>Offres du jour</h2>
+            </div>
+            
+            <div class="grille-promo">
+                <!-- Promo Large -->
+                <div class="carte-promo promo-grande">
+                    <img src="https://placehold.co/800x600/1a00e0/FFFFFF/png?text=Gaming" alt="Gaming">
+                    <div class="promo-superposition"></div>
+                    <div class="promo-contenu">
+                        <span class="etiquette">SÉLECTION GAMING</span>
+                        <h3>Équipez-vous pour la victoire</h3>
+                        <p>Jusqu'à -40% sur les consoles, accessoires et jeux vidéo.</p>
+                        <span class="lien-promo">Découvrir l'univers ➡️</span>
+                    </div>
+                </div>
+                
+                <div class="promo-colonne-droite">
+                    <!-- Promo Small 1 -->
+                    <div class="carte-promo promo-petite">
+                        <img src="https://placehold.co/400x300/233241/FFFFFF/png?text=Maison" alt="Maison">
+                        <div class="promo-superposition"></div>
+                        <div class="promo-contenu">
+                            <h3>Maison & Confort</h3>
+                            <p>Le design à prix CPasCher.</p>
+                            <span class="lien-promo" style="color: #93c5fd;">Voir les remises</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Promo Small 2 -->
+                    <div class="carte-promo promo-petite">
+                        <img src="https://placehold.co/400x300/233241/FFFFFF/png?text=Sport" alt="Sport">
+                        <div class="promo-superposition"></div>
+                        <div class="promo-contenu">
+                            <h3>Sport & Outdoor</h3>
+                            <p>Reprenez le sport à fond.</p>
+                            <span class="lien-promo" style="color: #93c5fd;">Équipez-vous</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pied-de-page">
+        <div class="pied-de-page-conteneur">
+            <div class="pied-de-page-grille">
+                <div class="pied-de-page-colonne">
+                    <div class="pied-de-page-logo">CPasCher</div>
+                    <p class="pied-de-page-description">CDiscount en beaucoup moins cher.</p>
+                    <div class="pied-de-page-social">
+                        <span>🐦</span>
+                        <span>📷</span>
+                        <span>📧</span>
+                    </div>
+                </div>
+                
+                <div class="pied-de-page-colonne">
+                    <h4>Détails du projet</h4>
+                    <ul>
+                        <li><a href="#">Repo GitHub</a></li>
+                        <li><a href="https://www.cdiscount.fr/">Site officiel</a></li>
+                        <li><a href="https://www.ensitech.eu/">Ensitech</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pied-de-page-colonne">
+                    <h4>Aides & Contacts</h4>
+                    <ul>
+                        <li><a href="#">Aide</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Paiement sécurisé</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pied-de-page-colonne">
+                    <h4>Société</h4>
+                    <ul>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">CGV</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pied-de-page-bas">
+                <p>© 2026 CPasCher. Tous droits pas trop réservés.</p>
+                <div class="pied-de-page-paiements">
+                    <span>💳</span>
+                    <span>💰</span>
+                    <span>📶</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
