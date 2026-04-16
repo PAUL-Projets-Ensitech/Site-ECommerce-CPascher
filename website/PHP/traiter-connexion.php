@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once '/PHP/config.php';
 
 $response = array('success' => false, 'message' => '');
 
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                 $response['success'] = true;
                 $response['message'] = 'Connexion réussie.';
-                $response['redirect'] = 'mon-compte.html';
+                $response['redirect'] = '../HTML/mon-compte.html';
             } else {
                 $response['message'] = 'Email ou mot de passe incorrect.';
             }

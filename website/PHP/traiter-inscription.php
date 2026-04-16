@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                 $response['success'] = true;
                 $response['message'] = 'Inscription reussie.';
-                $response['redirect'] = 'connexion.html';
+                $response['redirect'] = '../HTML/connexion.html';
             }
         } catch (Exception $e) {
             $response['message'] = 'Erreur lors inscription.';
