@@ -5,23 +5,24 @@
 }
 
 .grille-categories-detail {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   margin-top: 40px;
 }
 
 .categorie-card {
-  background-color: white;
+  width: 30%;
+  margin-bottom: 30px;
+  background-color: #ffffff;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #dddddd;
+  box-shadow: 0 4px 15px #cccccc;
 }
 
 .categorie-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px #999999;
 }
 
 .categorie-card img {
@@ -33,12 +34,12 @@
 .categorie-card h3 {
   padding: 20px 20px 10px;
   font-size: 20px;
-  color: var(--primary);
+  color: #1a00e0;
 }
 
 .categorie-card p {
   padding: 0 20px 20px;
-  color: var(--text-light);
+  color: #454557;
   font-size: 14px;
 }
 
@@ -52,8 +53,6 @@
   border-radius: 8px;
   text-align: center;
   font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s;
   text-decoration: none;
 }
 

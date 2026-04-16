@@ -15,14 +15,14 @@
 }
 
 .info-contact h3 {
-  color: var(--primary);
+  color: #1a00e0;
   margin-bottom: 15px;
   margin-top: 30px;
 }
 
 .info-contact p {
   margin-bottom: 10px;
-  color: var(--text-color);
+  color: #0d1d2b;
 }
 
 .social-links {
@@ -36,7 +36,7 @@
   padding: 10px 15px;
   background-color: #f3f4f6;
   border-radius: 8px;
-  color: var(--primary);
+  color: #1a00e0;
   font-weight: 600;
   transition: background-color 0.2s;
   text-decoration: none;

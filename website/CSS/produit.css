@@ -1,41 +1,42 @@
 /* --- Detail Produit --- */
 .detail-produit {
   padding: 60px 40px;
-  background-color: white;
+  background-color: #ffffff;
 }
 
 .produit-detail-flex {
   display: flex;
-  gap: 50px;
   margin-bottom: 50px;
-  max-width: 1200px;
+  width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .produit-image {
-  flex: 1;
+  width: 50%;
+  padding-right: 25px;
 }
 
 .produit-image img {
   width: 100%;
   border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dddddd;
+  box-shadow: 0 4px 20px #cccccc;
 }
 
 .produit-info {
-  flex: 1;
+  width: 50%;
+  padding-left: 25px;
 }
 
 .produit-info h1 {
   font-size: 32px;
   margin-bottom: 20px;
-  color: var(--text-color);
+  color: #0d1d2b;
 }
 
 .produit-donnees {
   display: flex;
-  gap: 20px;
   margin-bottom: 20px;
   font-size: 14px;
 }
@@ -43,6 +44,7 @@
 .rating {
   color: #f59e0b;
   font-weight: 600;
+  margin-right: 20px;
 }
 
 .stock {
@@ -53,19 +55,19 @@
 .produit-prix {
   display: flex;
   align-items: center;
-  gap: 15px;
   margin-bottom: 30px;
 }
 
 .prix-actuel {
   font-size: 32px;
   font-weight: 900;
-  color: var(--secondary);
+  color: #bb0025;
+  margin-right: 15px;
 }
 
 .reduction {
-  background-color: var(--secondary);
-  color: white;
+  background-color: #bb0025;
+  color: #ffffff;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 14px;
@@ -73,7 +75,7 @@
 }
 
 .description-produit {
-  color: var(--text-light);
+  color: #454557;
   line-height: 1.6;
   margin-bottom: 30px;
 }
@@ -83,27 +85,26 @@
 }
 
 .options-produit label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: block;
   font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .options-produit input {
   width: 70px;
   padding: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   border-radius: 5px;
 }
 
 .actions-produit {
   display: flex;
-  gap: 15px;
   margin-bottom: 30px;
 }
 
 .actions-produit .bouton {
-  flex: 1;
+  width: 48%;
+  margin-right: 2%;
 }
 
 .caracteristiques {
@@ -115,7 +116,7 @@
 
 .caracteristiques h3 {
   margin-bottom: 15px;
-  color: var(--primary);
+  color: #1a00e0;
 }
 
 .caracteristiques ul {
@@ -125,11 +126,11 @@
 
 .caracteristiques li {
   padding: 8px 0;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #dddddd;
 }
 
 .avis-produit {
-  max-width: 1200px;
+  width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -137,7 +138,7 @@
 .avis-produit h3 {
   margin-top: 40px;
   margin-bottom: 20px;
-  color: var(--primary);
+  color: #1a00e0;
 }
 
 .avis-item {
@@ -145,5 +146,5 @@
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 15px;
-  border-left: 4px solid var(--primary);
+  border-left: 4px solid #1a00e0;
 }

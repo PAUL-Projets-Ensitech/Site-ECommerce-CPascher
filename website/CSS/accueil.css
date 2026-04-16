@@ -1,6 +1,6 @@
 /* --- Section Hero (Haut de page) --- */
 .hero {
-  background: linear-gradient(135deg, var(--primary), #3732ff);
+  background: linear-gradient(135deg, #1a00e0, #3732ff);
   color: white;
   padding: 60px 40px;
   display: flex;

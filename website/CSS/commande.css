@@ -11,12 +11,12 @@
   background-color: white;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px #cccccc;
 }
 
 .commande-form h2 {
   margin-bottom: 20px;
-  color: var(--primary);
+  color: #1a00e0;
 }
 
 .commande-resume {
@@ -25,10 +25,10 @@
   padding: 30px;
   border-radius: 15px;
   height: fit-content;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px #cccccc;
 }
 
 .commande-resume h2 {
   margin-bottom: 20px;
-  color: var(--text-color);
+  color: #0d1d2b;
 }
