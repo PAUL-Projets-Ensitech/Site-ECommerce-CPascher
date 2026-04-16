@@ -26,9 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['client_email'] = $email;
                 
                 // Si la case "Se souvenir de moi" est cochée
-                if (isset($_POST['se_souvenir']) && $_POST['se_souvenir'] === 'on') {
-                    setcookie('remember_me', $client['id_client'], time() + (30 * 24 * 3600), "/");
-                }
+                // if (isset($_POST['se_souvenir']) && $_POST['se_souvenir'] === 'on') {
+                //     setCookie('se_souvenir', $client['id_client'], {'max-age': 3600});
+                // }
                 
                 $response['success'] = true;
                 $response['message'] = 'Connexion réussie.';
