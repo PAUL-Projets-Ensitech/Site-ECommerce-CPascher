@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const boutonProfil = document.getElementById('bouton-profil');
     if (boutonProfil) {
         boutonProfil.addEventListener('click', () => {
-            window.location.href = 'connexion.html';
+            window.location.href = '../website/HTML/connexion.html';
         });
     }
     
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
                 if (result.success) {
                     alert(result.message);
-                    window.location.href = result.redirect || 'connexion.html';
+                    window.location.href = result.redirect || '../website/HTML/connexion.html';
                 } else {
                     alert(result.message);
                 }
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const result = await response.json();
                 if (result.success) {
-                    window.location.href = result.redirect || 'mon-compte.html';
+                    window.location.href = result.redirect || '../website/HTML/mon-compte.html';
                 } else {
                     alert(result.message);
                 }
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 } else {
                     // Utilisateur non connecté, rediriger vers connexion
-                    window.location.href = 'connexion.html';
+                    window.location.href = '../website/HTML/connexion.html';
                 }
             })
             .catch(error => {
