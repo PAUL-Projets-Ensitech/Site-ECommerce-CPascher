@@ -43,6 +43,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     header('Content-Type: application/json; charset=utf-8');
     echo json_encode($response);
+} elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'deconnexion') {
+    // Nettoyage de la session
+    $_SESSION = array();
+
+    if (ini_get('session.use_cookies')) {
+        $params = session_get_cookie_params();
+        setcookie(
+            session_name(),
+            '',
+            time() - 42000,
+            $params['path'],
+            $params['domain'],
+            $params['secure'],
+            $params['httponly']
+        );
+    }
+
+    if (isset($_COOKIE['se_souvenir'])) {
+        setcookie('se_souvenir', '', time() - 3600, '/');
+    }
+
+    session_destroy();
+
+    $response = [
+        'success' => true,
+        'message' => 'Déconnexion réussie.',
+        'redirect' => '../HTML/connexion.html'
+    ];
+
+    $acceptHeader = isset($_SERVER['HTTP_ACCEPT']) ? $_SERVER['HTTP_ACCEPT'] : '';
+    $isAjaxRequest = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+
+    if ($isAjaxRequest || strpos($acceptHeader, 'application/json') !== false) {
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($response);
+    } else {
+        header('Location: ../HTML/connexion.html');
+    }
+    exit;
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'profil') {
     if (isset($_SESSION['client_id'])) {
         $stmt = $pdo->prepare('SELECT nom, prenom, email, adresse_livraison FROM CLIENT WHERE id_client = ?');
