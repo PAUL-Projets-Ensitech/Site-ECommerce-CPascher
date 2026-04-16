@@ -228,7 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (result.success) {
                     alert(result.message);
                     const isInHtmlFolder = window.location.pathname.includes('/HTML/');
-                    window.location.href = result.redirect || (isInHtmlFolder ? 'connexion.html' : 'HTML/connexion.html');
+                    let redirectPage = result.redirect || 'connexion.html';
+                    window.location.href = isInHtmlFolder ? redirectPage : 'HTML/' + redirectPage;
                 } else {
                     alert(result.message);
                 }
@@ -255,7 +256,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
                 if (result.success) {
                     const isInHtmlFolder = window.location.pathname.includes('/HTML/');
-                    window.location.href = result.redirect || (isInHtmlFolder ? 'mon-compte.html' : 'HTML/mon-compte.html');
+                    let redirectPage = result.redirect || 'mon-compte.html';
+                    window.location.href = isInHtmlFolder ? redirectPage : 'HTML/' + redirectPage;
                 } else {
                     alert(result.message);
                 }
@@ -269,7 +271,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 9. Récupération des infos du profil utilisateur ---
     const pageMonCompte = document.querySelector('.mon-compte-section');
     if (pageMonCompte) {
-        fetch('../PHP/traiter-connexion.php?action=profil')
+        const isInHtmlFolder = window.location.pathname.includes('/HTML/');
+        const fetchUrl = isInHtmlFolder ? '../PHP/traiter-connexion.php?action=profil' : 'PHP/traiter-connexion.php?action=profil';
+        
+        fetch(fetchUrl)
             .then(res => res.json())
             .then(data => {
                 if (data.success && data.client) {
@@ -289,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 } else {
                     // Utilisateur non connecté, rediriger vers connexion
-                    window.location.href = 'connexion.html';
+                    window.location.href = window.location.pathname.includes('/HTML/') ? 'connexion.html' : 'HTML/connexion.html';
                 }
             })
             .catch(error => {
