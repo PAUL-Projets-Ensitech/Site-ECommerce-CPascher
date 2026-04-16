@@ -1,0 +1,7 @@
+# Modèle Logique de Données (MLD)
+  * **CLIENT** (<u>id_client</u>, nom, prenom, email, mot_de_passe, adresse_livraison)
+  * **CATEGORIE** (<u>id_categorie</u>, nom_categorie)
+  * **PRODUIT** (<u>id_produit</u>, nom_produit, description, prix_unitaire, stocks_disponibles, #id_categorie)
+  * **COMMANDE** (<u>id_commande</u>, date_commande, statut_commande, prix_total, #id_client)
+  * **LIGNE_COMMANDE** (<u>#id_commande</u>, <u>#id_produit</u>, quantite)
+  * **CONTENIR** (<u>#id_commande</u>, <u>#id_produit</u>, quantite)
