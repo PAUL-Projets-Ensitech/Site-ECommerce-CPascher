@@ -5,15 +5,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary: #1d4ed8;
+  --secondary: #0ea5e9;
+  --bg-color: #f7f9ff;
+  --text-color: #0d1d2b;
+  --text-light: #475569;
+  --font-title: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f7f9ff;
-  color: #0d1d2b;
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.5;
 }
 
 h1, h2, h3, .titre {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-title);
 }
 
 a {
@@ -21,10 +31,112 @@ a {
   color: inherit;
 }
 
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.section-conteneur {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+.sous-titre {
+  margin-top: 8px;
+  color: var(--text-light);
+}
+
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 11px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.bouton-primaire {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.bouton-primaire:hover {
+  background-color: #1e40af;
+}
+
+.bouton-secondaire {
+  background-color: #fff;
+  color: var(--text-color);
+  border-color: #cbd5e1;
+}
+
+.bouton-secondaire:hover {
+  background-color: #f8fafc;
+}
+
+.ancien-prix {
+  color: #64748b;
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+.cache {
+  display: none;
+}
+
+.texte-centre {
+  text-align: center;
+}
+
+.actions-verticales {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.titre-secondaire {
+  margin-top: 30px;
+}
+
+.champ-motdepasse {
+  position: relative;
+}
+
+.input-avec-icone {
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 40px;
+}
+
+.bouton-oeil {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--text-light);
+}
+
+.bouton-oeil:hover {
+  color: var(--text-color);
 }
 
 /* --- Barre de navigation --- */
@@ -46,6 +158,10 @@ img {
   font-weight: 800;
   font-style: italic;
   font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.logo a {
+  color: inherit;
 }
 
 .liens-navigation {
@@ -112,6 +228,11 @@ img {
   font-weight: bold;
   padding: 2px 6px;
   border-radius: 10px;
+}
+
+.lien-panier {
+  display: inline-flex;
+  align-items: center;
 }
 
 /* --- Footer --- */
@@ -197,6 +318,14 @@ img {
   color: #94a3b8;
 }
 
+.pied-de-page-bas a {
+  color: #93c5fd;
+}
+
+.pied-de-page-bas a:hover {
+  text-decoration: underline;
+}
+
 .pied-de-page-paiements {
   display: flex;
   gap: 20px;
@@ -205,6 +334,22 @@ img {
 
 /* --- Responsive basique --- */
 @media (max-width: 768px) {
+  .barre-navigation {
+    padding: 14px 18px;
+    gap: 12px;
+  }
+
+  .liens-navigation {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .conteneur-recherche {
+    width: 100%;
+  }
+
   .hero-contenu {
     flex-direction: column;
   }
@@ -224,6 +369,12 @@ img {
   .pied-de-page-grille {
     grid-template-columns: 1fr 1fr;
   }
+
+  .pied-de-page-bas {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
 }
 
 /* --- Pages de formulaires --- */
@@ -234,7 +385,7 @@ img {
 }
 
 /* --- Section Modèles de formulaires en commun --- */
-.forme-conteneur, .contact-flex {
+.forme-conteneur {
   max-width: 500px;
   margin: 40px auto;
 }
@@ -319,7 +470,7 @@ img {
   margin-bottom: 15px;
 }
 
-.contenu-legal p, .apropous-contenu p {
+.contenu-legal p, .apropos-contenu p {
   margin-bottom: 15px;
   line-height: 1.6;
   color: #0d1d2b;

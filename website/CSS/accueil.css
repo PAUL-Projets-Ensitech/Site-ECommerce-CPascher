@@ -1,251 +1,242 @@
-/* --- Section Hero (Haut de page) --- */
+/* --- Accueil : styles simplifiés --- */
+
+/* Hero */
 .hero {
-  background: linear-gradient(135deg, #1a00e0, #3732ff);
-  color: white;
-  padding: 60px 40px;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
+  background: #1d4ed8;
+  color: #fff;
+  padding: 56px 40px;
 }
 
 .hero-contenu {
   display: flex;
-  max-width: 1200px;
-  width: 100%;
   align-items: center;
-  gap: 50px;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.hero-texte {
+.hero-texte,
+.hero-conteneur-image {
   flex: 1;
 }
 
 .hero-texte h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  line-height: 1.1;
+  font-size: 44px;
+  line-height: 1.15;
+  margin-bottom: 16px;
 }
 
 .hero-texte p {
-  font-size: 20px;
-  margin-bottom: 30px;
-  opacity: 0.9;
+  font-size: 18px;
+  margin-bottom: 24px;
 }
 
 .hero-boutons {
   display: flex;
-  gap: 15px;
-}
-
-.hero-conteneur-image {
-  flex: 1;
-  position: relative;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .hero-image {
-  width: 100%;
-  border-radius: 20px;
-  transform: rotate(3deg);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  transition: transform 0.5s;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
 }
 
-.hero-image:hover {
-  transform: scale(1.05) rotate(0deg);
-}
-
-/* --- Section Catégories (Flexbox) --- */
+/* Catégories */
 .categories {
-  padding: 50px 40px;
-  background-color: #ffffff;
+  padding: 48px 40px;
+  background-color: #fff;
 }
 
 .categories-conteneur {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  flex-wrap: wrap;
+  gap: 36px;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: wrap;
 }
 
 .categorie-element {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  cursor: pointer;
+  gap: 12px;
 }
 
 .cercle-icone {
-  width: 80px;
-  height: 80px;
-  background-color: #edf4ff;
+  width: 74px;
+  height: 74px;
   border-radius: 50%;
+  background-color: #edf4ff;
   display: flex;
-  justify-content: center;
   align-items: center;
-  transition: background-color 0.3s, transform 0.3s;
-  font-size: 32px;
-  color: #333;
+  justify-content: center;
+  font-size: 30px;
+  transition: background-color 0.2s;
 }
 
 .categorie-element:hover .cercle-icone {
-  background-color: var(--primary);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(26, 0, 224, 0.2);
-  color: white;
+  background-color: #dbeafe;
 }
 
 .categorie-nom {
-  font-weight: bold;
-  font-family: var(--font-title);
+  font-weight: 700;
   font-size: 14px;
 }
 
-/* --- Section Ventes Flash (CSS Grid) --- */
+/* Ventes flash */
 .ventes-flash {
-  padding: 60px 40px;
+  padding: 56px 40px;
   background-color: #edf4ff;
 }
 
 .section-entete {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .section-titre h2 {
-  font-size: 32px;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-size: 30px;
+  margin-bottom: 6px;
 }
 
 .section-titre p {
-  color: var(--text-light);
-  margin-top: 5px;
+  color: #475569;
 }
 
-.compte-a-rebours {
-  background: white;
-  padding: 10px 20px;
-  border-radius: 10px;
+.grille-produits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.carte-produit {
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px;
   display: flex;
-  align-items: center;
-  gap: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  flex-direction: column;
+  gap: 12px;
 }
 
-.compte-a-rebours-label {
+.conteneur-image-produit {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f8fafc;
+}
+
+.etiquette-reduction {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ef4444;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 8px;
   font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: var(--text-light);
+  font-weight: 700;
 }
 
-.compte-a-rebours-valeur {
-  color: var(--secondary);
-  font-family: monospace;
-  font-size: 18px;
-  font-weight: bold;
+.nom-produit {
+  font-size: 16px;
+  line-height: 1.35;
+  min-height: 44px;
 }
 
-/* --- Section Promo / Bento --- */
+.prix-produit {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.prix {
+  font-size: 22px;
+  font-weight: 800;
+  color: #bb0025;
+}
+
+.bouton-panier {
+  margin-top: auto;
+  border: none;
+  border-radius: 10px;
+  background-color: #1d4ed8;
+  color: #fff;
+  font-weight: 700;
+  padding: 11px 14px;
+  cursor: pointer;
+}
+
+.bouton-panier:hover {
+  background-color: #1e40af;
+}
+
+/* Promo */
 .section-promo {
-  padding: 60px 40px;
-  background-color: var(--bg-color);
+  padding: 56px 40px;
+  background-color: #f7f9ff;
 }
 
 .grille-promo {
-  display: flex;
-  gap: 25px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
 }
 
 .promo-colonne-droite {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+  display: grid;
+  gap: 20px;
 }
 
 .carte-promo {
   position: relative;
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
+  min-height: 300px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 40px;
-  color: white;
-  cursor: pointer;
+  align-items: flex-end;
+  padding: 24px;
+  color: #fff;
 }
 
 .carte-promo img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 1s;
-  z-index: 1;
-}
-
-.carte-promo:hover img {
-  transform: scale(1.1);
 }
 
 .promo-superposition {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-  z-index: 2;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.2));
 }
 
 .promo-contenu {
   position: relative;
-  z-index: 3;
+  z-index: 1;
 }
 
 .promo-grande {
-  flex: 2;
-  background-color: var(--primary);
-  min-height: 625px; /* (300px * 2) + 25px gap */
-}
-
-.promo-grande img {
-  opacity: 0.6;
-}
-
-.promo-petite {
-  flex: 1;
-  background-color: #233241;
-}
-
-.promo-petite img {
-  opacity: 0.4;
+  min-height: 620px;
 }
 
 .etiquette {
+  display: inline-block;
   background-color: #ffdf9e;
   color: #574000;
-  padding: 5px 12px;
-  border-radius: 20px;
+  border-radius: 999px;
+  padding: 4px 10px;
   font-size: 12px;
-  font-weight: bold;
-  display: inline-block;
-  margin-bottom: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
 .promo-contenu h3 {
-  font-size: 32px;
-  margin-bottom: 10px;
+  font-size: 30px;
+  margin-bottom: 8px;
 }
 
 .promo-petite .promo-contenu h3 {
@@ -253,10 +244,41 @@
 }
 
 .promo-contenu p {
-  margin-bottom: 20px;
-  opacity: 0.9;
+  margin-bottom: 12px;
 }
 
 .lien-promo {
-  font-weight: bold;
+  color: #93c5fd;
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .hero-contenu {
+    flex-direction: column;
+  }
+
+  .grille-promo {
+    grid-template-columns: 1fr;
+  }
+
+  .promo-grande {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero,
+  .categories,
+  .ventes-flash,
+  .section-promo {
+    padding: 40px 18px;
+  }
+
+  .hero-texte h1 {
+    font-size: 34px;
+  }
+
+  .grille-produits {
+    grid-template-columns: 1fr;
+  }
 }

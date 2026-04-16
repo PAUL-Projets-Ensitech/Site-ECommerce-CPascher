@@ -9,7 +9,7 @@
 </head>
 <body>
         <nav class="barre-navigation">
-        <div class="logo"><a href="../index.html" style="color: white; text-decoration: none;">CPasCher</a></div>
+    <div class="logo"><a href="../index.html">CPasCher</a></div>
         
         <div class="liens-navigation">
             <a href="../index.html">Accueil</a>
@@ -26,7 +26,7 @@
         
         <div class="actions-navigation">
             <button class="bouton-icone" id="bouton-profil">👤</button>
-            <a href="panier.html" class="bouton-icone" style="text-decoration: none; color: white; display: flex; align-items: center;">🛒<span class="badge" id="panier-badge">0</span></a>
+            <a href="panier.html" class="bouton-icone lien-panier">🛒<span class="badge" id="panier-badge">0</span></a>
         </div>
     </nav>
 
@@ -55,17 +55,17 @@
                     
                     <div class="groupe-formule">
                         <label for="mot_de_passe_inscription">Mot de passe :</label>
-                        <div style="position: relative;">
-                            <input type="password" id="mot_de_passe_inscription" name="mot_de_passe" required placeholder="Au minimum 8 caractères" style="width: 100%; box-sizing: border-box; padding-right: 40px;"/>
-                            <button type="button" onclick="const input = document.getElementById('mot_de_passe_inscription'); input.type = input.type === 'password' ? 'text' : 'password'; this.textContent = input.type === 'password' ? '👁️' : '🙈';" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.2rem;">👁️</button>
+                        <div class="champ-motdepasse">
+                            <input type="password" id="mot_de_passe_inscription" name="mot_de_passe" required placeholder="Au minimum 8 caractères" class="input-avec-icone"/>
+                            <button type="button" onclick="const input = document.getElementById('mot_de_passe_inscription'); input.type = input.type === 'password' ? 'text' : 'password'; this.textContent = input.type === 'password' ? '👁️' : '🙈';" class="bouton-oeil">👁️</button>
                         </div>
                     </div>
                     
                     <div class="groupe-formule">
                         <label for="confirmer_mdp">Confirmer le mot de passe :</label>
-                        <div style="position: relative;">
-                            <input type="password" id="confirmer_mdp" name="confirmer_mdp" required placeholder="Confirmez votre mot de passe" style="width: 100%; box-sizing: border-box; padding-right: 40px;"/>
-                            <button type="button" onclick="const input = document.getElementById('confirmer_mdp'); input.type = input.type === 'password' ? 'text' : 'password'; this.textContent = input.type === 'password' ? '👁️' : '🙈';" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.2rem;">👁️</button>
+                        <div class="champ-motdepasse">
+                            <input type="password" id="confirmer_mdp" name="confirmer_mdp" required placeholder="Confirmez votre mot de passe" class="input-avec-icone"/>
+                            <button type="button" onclick="const input = document.getElementById('confirmer_mdp'); input.type = input.type === 'password' ? 'text' : 'password'; this.textContent = input.type === 'password' ? '👁️' : '🙈';" class="bouton-oeil">👁️</button>
                         </div>
                     </div>
                     

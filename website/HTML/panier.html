@@ -10,7 +10,7 @@
 </head>
 <body>
         <nav class="barre-navigation">
-        <div class="logo"><a href="../index.html" style="color: white; text-decoration: none;">CPasCher</a></div>
+    <div class="logo"><a href="../index.html">CPasCher</a></div>
         
         <div class="liens-navigation">
             <a href="../index.html">Accueil</a>
@@ -27,7 +27,7 @@
         
         <div class="actions-navigation">
             <button class="bouton-icone" id="bouton-profil">👤</button>
-            <a href="panier.html" class="bouton-icone" style="text-decoration: none; color: white; display: flex; align-items: center;">🛒<span class="badge" id="panier-badge">0</span></a>
+            <a href="panier.html" class="bouton-icone lien-panier">🛒<span class="badge" id="panier-badge">0</span></a>
         </div>
     </nav>
 
@@ -43,7 +43,7 @@
                         <a href="categorie.html" class="bouton bouton-primaire">Continuer les achats</a>
                     </div>
                     
-                    <table class="tableau-panier" id="tableau-panier" style="display: none;">
+                    <table class="tableau-panier cache" id="tableau-panier">
                         <thead>
                             <tr>
                                 <th>Produit</th>
@@ -59,7 +59,7 @@
                     </table>
                 </div>
                 
-                <div class="panier-resume" id="panier-resume" style="display: none;">
+                <div class="panier-resume cache" id="panier-resume">
                     <h2>Résumé de la commande</h2>
                     <div class="resume-ligne">
                         <span>Sous-total :</span>
@@ -73,9 +73,9 @@
                         <span>Total TTC :</span>
                         <span id="total-ttc">0,00 €</span>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
-                        <a href="commande.html" class="bouton bouton-primaire large" style="text-align: center;">Procéder au paiement</a>
-                        <a href="categorie.html" class="bouton bouton-secondaire large" style="text-align: center; color: #0d1d2b; border-color: #0d1d2b;">Continuer les achats</a>
+                    <div class="actions-verticales">
+                        <a href="commande.html" class="bouton bouton-primaire large texte-centre">Procéder au paiement</a>
+                        <a href="categorie.html" class="bouton bouton-secondaire large texte-centre">Continuer les achats</a>
                     </div>
                 </div>
             </div>

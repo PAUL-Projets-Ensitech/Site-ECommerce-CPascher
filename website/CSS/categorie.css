@@ -1,61 +1,59 @@
-/* --- Section Categories Detail --- */
+/* --- Catégories (version simple) --- */
 .categories-detail {
-  padding: 60px 40px;
-  background-color: #ffffff;
+  padding: 56px 40px;
+  background-color: #fff;
 }
 
 .grille-categories-detail {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 40px;
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
 }
 
 .categorie-card {
-  width: 30%;
-  margin-bottom: 30px;
-  background-color: #ffffff;
-  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #dddddd;
-  box-shadow: 0 4px 15px #cccccc;
-}
-
-.categorie-card:hover {
-  box-shadow: 0 10px 30px #999999;
+  display: flex;
+  flex-direction: column;
 }
 
 .categorie-card img {
   width: 100%;
-  height: 200px;
+  height: 190px;
   object-fit: cover;
 }
 
 .categorie-card h3 {
-  padding: 20px 20px 10px;
+  padding: 16px 16px 8px;
   font-size: 20px;
-  color: #1a00e0;
+  color: var(--primary);
 }
 
 .categorie-card p {
-  padding: 0 20px 20px;
-  color: #454557;
+  padding: 0 16px 14px;
+  color: var(--text-light);
   font-size: 14px;
 }
 
 .bouton-categorie {
-  display: block;
-  margin: 0 20px 20px;
-  padding: 10px 20px;
+  margin: 0 16px 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
   background-color: #ffdf9e;
   color: #574000;
-  border: none;
-  border-radius: 8px;
+  font-weight: 700;
   text-align: center;
-  font-weight: 600;
-  text-decoration: none;
 }
 
 .bouton-categorie:hover {
   background-color: #ffd070;
+}
+
+@media (max-width: 768px) {
+  .categories-detail {
+    padding: 40px 18px;
+  }
 }
