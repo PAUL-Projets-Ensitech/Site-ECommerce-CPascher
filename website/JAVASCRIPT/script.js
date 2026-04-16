@@ -193,35 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // --- 6. Traitement des formulaires ---
-    const formContact = document.getElementById('form-contact');
-    if (formContact) {
-        formContact.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(formContact);
-            const actionUrl = formContact.getAttribute('action') || '../PHP/traiter-contact.php';
-            try {
-                const response = await fetch(actionUrl, {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const result = await response.json();
-                const feedback = document.getElementById('message-feedback');
-                
-                if (feedback) {
-                    feedback.innerHTML = `<div class="message ${result.success ? 'success' : 'error'}">${result.message}</div>`;
-                    if (result.success) {
-                        formContact.reset();
-                    }
-                }
-            } catch (error) {
-                console.error('Erreur:', error);
-            }
-        });
-    }
-    
     // --- 7. Validation formulaire inscription ---
     const formInscription = document.getElementById('form-inscription');
     if (formInscription) {
