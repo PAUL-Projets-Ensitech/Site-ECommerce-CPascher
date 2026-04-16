@@ -1,9 +1,9 @@
 <?php
 // Configuration de la base de données
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'localhost:3307');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'cpascher');
+define('DB_NAME', 'site-ecommerce-cpascher');
 
 // Connexion à la base de données
 try {
