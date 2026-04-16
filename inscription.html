@@ -53,12 +53,18 @@
                     
                     <div class="groupe-formule">
                         <label for="mot_de_passe_inscription">Mot de passe :</label>
-                        <input type="password" id="mot_de_passe_inscription" name="mot_de_passe" required placeholder="Au minimum 8 caractères"/>
+                        <div style="position: relative;">
+                            <input type="password" id="mot_de_passe_inscription" name="mot_de_passe" required placeholder="Au minimum 8 caractères" style="width: 100%; box-sizing: border-box; padding-right: 40px;"/>
+                            <button type="button" onclick="const input = document.getElementById('mot_de_passe_inscription'); input.type = input.type === 'password' ? 'text' : 'password'; this.textContent = input.type === 'password' ? '👁️' : '🙈';" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.2rem;">👁️</button>
+                        </div>
                     </div>
                     
                     <div class="groupe-formule">
                         <label for="confirmer_mdp">Confirmer le mot de passe :</label>
-                        <input type="password" id="confirmer_mdp" name="confirmer_mdp" required placeholder="Confirmez votre mot de passe"/>
+                        <div style="position: relative;">
+                            <input type="password" id="confirmer_mdp" name="confirmer_mdp" required placeholder="Confirmez votre mot de passe" style="width: 100%; box-sizing: border-box; padding-right: 40px;"/>
+                            <button type="button" onclick="const input = document.getElementById('confirmer_mdp'); input.type = input.type === 'password' ? 'text' : 'password'; this.textContent = input.type === 'password' ? '👁️' : '🙈';" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.2rem;">👁️</button>
+                        </div>
                     </div>
                     
                     <div class="groupe-formule">
