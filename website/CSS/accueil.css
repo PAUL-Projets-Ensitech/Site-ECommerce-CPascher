@@ -1,0 +1,262 @@
+/* --- Section Hero (Haut de page) --- */
+.hero {
+  background: linear-gradient(135deg, var(--primary), #3732ff);
+  color: white;
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-contenu {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-texte {
+  flex: 1;
+}
+
+.hero-texte h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.hero-texte p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.hero-boutons {
+  display: flex;
+  gap: 15px;
+}
+
+.hero-conteneur-image {
+  flex: 1;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  border-radius: 20px;
+  transform: rotate(3deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s;
+}
+
+.hero-image:hover {
+  transform: scale(1.05) rotate(0deg);
+}
+
+/* --- Section Catégories (Flexbox) --- */
+.categories {
+  padding: 50px 40px;
+  background-color: #ffffff;
+}
+
+.categories-conteneur {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.categorie-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.cercle-icone {
+  width: 80px;
+  height: 80px;
+  background-color: #edf4ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 32px;
+  color: #333;
+}
+
+.categorie-element:hover .cercle-icone {
+  background-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(26, 0, 224, 0.2);
+  color: white;
+}
+
+.categorie-nom {
+  font-weight: bold;
+  font-family: var(--font-title);
+  font-size: 14px;
+}
+
+/* --- Section Ventes Flash (CSS Grid) --- */
+.ventes-flash {
+  padding: 60px 40px;
+  background-color: #edf4ff;
+}
+
+.section-entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.section-titre h2 {
+  font-size: 32px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-titre p {
+  color: var(--text-light);
+  margin-top: 5px;
+}
+
+.compte-a-rebours {
+  background: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.compte-a-rebours-label {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.compte-a-rebours-valeur {
+  color: var(--secondary);
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* --- Section Promo / Bento --- */
+.section-promo {
+  padding: 60px 40px;
+  background-color: var(--bg-color);
+}
+
+.grille-promo {
+  display: flex;
+  gap: 25px;
+}
+
+.promo-colonne-droite {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.carte-promo {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.carte-promo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s;
+  z-index: 1;
+}
+
+.carte-promo:hover img {
+  transform: scale(1.1);
+}
+
+.promo-superposition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  z-index: 2;
+}
+
+.promo-contenu {
+  position: relative;
+  z-index: 3;
+}
+
+.promo-grande {
+  flex: 2;
+  background-color: var(--primary);
+  min-height: 625px; /* (300px * 2) + 25px gap */
+}
+
+.promo-grande img {
+  opacity: 0.6;
+}
+
+.promo-petite {
+  flex: 1;
+  background-color: #233241;
+}
+
+.promo-petite img {
+  opacity: 0.4;
+}
+
+.etiquette {
+  background-color: #ffdf9e;
+  color: #574000;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.promo-contenu h3 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.promo-petite .promo-contenu h3 {
+  font-size: 24px;
+}
+
+.promo-contenu p {
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.lien-promo {
+  font-weight: bold;
+}

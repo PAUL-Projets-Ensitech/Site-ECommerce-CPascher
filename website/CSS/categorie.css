@@ -1,0 +1,62 @@
+/* --- Section Categories Detail --- */
+.categories-detail {
+  padding: 60px 40px;
+  background-color: #ffffff;
+}
+
+.grille-categories-detail {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.categorie-card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.categorie-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.categorie-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.categorie-card h3 {
+  padding: 20px 20px 10px;
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.categorie-card p {
+  padding: 0 20px 20px;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.bouton-categorie {
+  display: block;
+  margin: 0 20px 20px;
+  padding: 10px 20px;
+  background-color: #ffdf9e;
+  color: #574000;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.bouton-categorie:hover {
+  background-color: #ffd070;
+}
