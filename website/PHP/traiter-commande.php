@@ -1,5 +1,5 @@
 <?php
-require_once '/PHP/config.php';
+require_once 'config.php';
 
 $response = array('success' => false, 'message' => '');
 
