@@ -21,4 +21,9 @@ try {
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
+// Vérification du cookie "Se souvenir de moi"
+if (!isset($_SESSION['client_id']) && isset($_COOKIE['remember_me'])) {
+    $_SESSION['client_id'] = $_COOKIE['remember_me'];
+}
 ?>

@@ -25,6 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['client_id'] = $client['id_client'];
                 $_SESSION['client_email'] = $email;
                 
+                // Si la case "Se souvenir de moi" est cochée
+                if (isset($_POST['se_souvenir']) && $_POST['se_souvenir'] === 'on') {
+                    setcookie('remember_me', $client['id_client'], time() + (30 * 24 * 3600), "/");
+                }
+                
                 $response['success'] = true;
                 $response['message'] = 'Connexion réussie.';
                 $response['redirect'] = 'mon-compte.html';
