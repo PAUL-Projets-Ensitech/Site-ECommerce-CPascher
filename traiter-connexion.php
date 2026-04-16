@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([':email' => $email]);
             $client = $stmt->fetch(PDO::FETCH_ASSOC);
             
-            if ($client && password_verify($mot_de_passe, $client['mot_de_passe'])) {
+            if ($client && $mot_de_passe === $client['mot_de_passe']) {
                 // Connexion réussie
                 $_SESSION['client_id'] = $client['id_client'];
                 $_SESSION['client_email'] = $email;
