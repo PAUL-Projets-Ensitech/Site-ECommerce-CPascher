@@ -147,7 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const boutonProfil = document.getElementById('bouton-profil');
     if (boutonProfil) {
         boutonProfil.addEventListener('click', () => {
-            window.location.href = '../website/HTML/connexion.html';
+            const isInHtmlFolder = window.location.pathname.includes('/HTML/');
+            window.location.href = isInHtmlFolder ? 'connexion.html' : 'HTML/connexion.html';
         });
     }
     
@@ -179,8 +180,9 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             
             const formData = new FormData(formContact);
+            const actionUrl = formContact.getAttribute('action') || '../PHP/traiter-contact.php';
             try {
-                const response = await fetch('traiter-contact.php', {
+                const response = await fetch(actionUrl, {
                     method: 'POST',
                     body: formData
                 });
@@ -215,8 +217,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             const formData = new FormData(formInscription);
+            const actionUrl = formInscription.getAttribute('action') || '../PHP/traiter-inscription.php';
             try {
-                const response = await fetch('traiter-inscription.php', {
+                const response = await fetch(actionUrl, {
                     method: 'POST',
                     body: formData
                 });
@@ -224,7 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
                 if (result.success) {
                     alert(result.message);
-                    window.location.href = result.redirect || '../website/HTML/connexion.html';
+                    const isInHtmlFolder = window.location.pathname.includes('/HTML/');
+                    window.location.href = result.redirect || (isInHtmlFolder ? 'connexion.html' : 'HTML/connexion.html');
                 } else {
                     alert(result.message);
                 }
@@ -241,15 +245,17 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             
             const formData = new FormData(formConnexion);
+            const actionUrl = formConnexion.getAttribute('action') || '../PHP/traiter-connexion.php';
             try {
-                const response = await fetch('traiter-connexion.php', {
+                const response = await fetch(actionUrl, {
                     method: 'POST',
                     body: formData
                 });
                 
                 const result = await response.json();
                 if (result.success) {
-                    window.location.href = result.redirect || '../website/HTML/mon-compte.html';
+                    const isInHtmlFolder = window.location.pathname.includes('/HTML/');
+                    window.location.href = result.redirect || (isInHtmlFolder ? 'mon-compte.html' : 'HTML/mon-compte.html');
                 } else {
                     alert(result.message);
                 }
@@ -283,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 } else {
                     // Utilisateur non connecté, rediriger vers connexion
-                    window.location.href = '../website/HTML/connexion.html';
+                    window.location.href = 'connexion.html';
                 }
             })
             .catch(error => {
