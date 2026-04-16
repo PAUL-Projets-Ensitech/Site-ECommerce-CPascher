@@ -30,15 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($stmt->fetch()) {
                 $response['message'] = 'Un compte existe déjà avec cet email.';
             } else {
-                $pwd_hashed = password_hash($mot_de_passe, PASSWORD_DEFAULT);
-                
                 $stmt = $pdo->prepare('INSERT INTO CLIENT (prenom, nom, email, mot_de_passe, adresse_livraison) 
                                        VALUES (:prenom, :nom, :email, :pwd, :adresse)');
                 $stmt->execute([
                     ':prenom' => $prenom,
                     ':nom' => $nom,
                     ':email' => $email,
-                    ':pwd' => $pwd_hashed,
+                    ':pwd' => $mot_de_passe,
                     ':adresse' => $adresse
                 ]);
                 
