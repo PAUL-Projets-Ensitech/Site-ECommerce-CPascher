@@ -259,4 +259,35 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- 9. Récupération des infos du profil utilisateur ---
+    const pageMonCompte = document.querySelector('.mon-compte-section');
+    if (pageMonCompte) {
+        fetch('traiter-connexion.php?action=profil')
+            .then(res => res.json())
+            .then(data => {
+                if (data.success && data.client) {
+                    const prenomEl = document.getElementById('profil-prenom');
+                    const nomEl = document.getElementById('profil-nom');
+                    const emailEl = document.getElementById('profil-email');
+                    const adresseEl = document.getElementById('profil-adresse');
+                    
+                    if (prenomEl) prenomEl.textContent = data.client.prenom || '';
+                    if (nomEl) nomEl.textContent = data.client.nom || '';
+                    if (emailEl) emailEl.textContent = data.client.email || '';
+                    if (adresseEl) {
+                        const adresseFormattee = data.client.adresse_livraison 
+                            ? data.client.adresse_livraison.replace(/\n/g, '<br/>') 
+                            : 'Aucune adresse renseignée';
+                        adresseEl.innerHTML = `${data.client.prenom || ''} ${data.client.nom || ''}<br/>${adresseFormattee}`;
+                    }
+                } else {
+                    // Utilisateur non connecté, rediriger vers connexion
+                    window.location.href = 'connexion.html';
+                }
+            })
+            .catch(error => {
+                console.error('Erreur profil:', error);
+            });
+    }
 });

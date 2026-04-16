@@ -38,6 +38,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     header('Content-Type: application/json; charset=utf-8');
     echo json_encode($response);
+} elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'profil') {
+    if (isset($_SESSION['client_id'])) {
+        $stmt = $pdo->prepare('SELECT nom, prenom, email, adresse_livraison FROM CLIENT WHERE id_client = ?');
+        $stmt->execute([$_SESSION['client_id']]);
+        $client = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if ($client) {
+            $response = [
+                'success' => true,
+                'client' => $client
+            ];
+        } else {
+            $response['message'] = 'Utilisateur introuvable';
+        }
+    } else {
+        $response['message'] = 'Non connecté';
+    }
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode($response);
 } else {
     header('HTTP/1.0 405 Method Not Allowed');
     die('Méthode non autorisée');
