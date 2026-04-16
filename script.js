@@ -233,4 +233,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- 8. Validation formulaire connexion ---
+    const formConnexion = document.getElementById('form-connexion');
+    if (formConnexion) {
+        formConnexion.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(formConnexion);
+            try {
+                const response = await fetch('traiter-connexion.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                if (result.success) {
+                    window.location.href = result.redirect || 'mon-compte.html';
+                } else {
+                    alert(result.message);
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Une erreur est survenue lors de la connexion.');
+            }
+        });
+    }
 });
