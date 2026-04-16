@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 9. Récupération des infos du profil utilisateur ---
     const pageMonCompte = document.querySelector('.mon-compte-section');
     if (pageMonCompte) {
-        fetch('traiter-connexion.php?action=profil')
+        fetch('../PHP/traiter-connexion.php?action=profil')
             .then(res => res.json())
             .then(data => {
                 if (data.success && data.client) {
