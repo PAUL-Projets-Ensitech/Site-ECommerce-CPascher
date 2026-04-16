@@ -146,10 +146,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 4. Interaction sur le bouton Profil ---
     const boutonProfil = document.getElementById('bouton-profil');
     if (boutonProfil) {
-        boutonProfil.addEventListener('click', () => {
-            const isInHtmlFolder = window.location.pathname.includes('/HTML/');
-            window.location.href = isInHtmlFolder ? 'connexion.html' : 'HTML/connexion.html';
-        });
+        const isInHtmlFolder = window.location.pathname.includes('/HTML/');
+        const fetchUrl = isInHtmlFolder ? '../PHP/traiter-connexion.php?action=profil' : 'PHP/traiter-connexion.php?action=profil';
+        
+        fetch(fetchUrl)
+            .then(res => res.json())
+            .then(data => {
+                if (data.success && data.client && data.client.prenom) {
+                    boutonProfil.innerHTML = `👤<span style="font-size: 12px; display: block; line-height: 1; margin-top: 4px;">${data.client.prenom}</span>`;
+                    boutonProfil.addEventListener('click', () => {
+                        window.location.href = isInHtmlFolder ? 'mon-compte.html' : 'HTML/mon-compte.html';
+                    });
+                } else {
+                    boutonProfil.innerHTML = `👤<span style="font-size: 12px; display: block; line-height: 1; margin-top: 4px;">Connexion</span>`;
+                    boutonProfil.addEventListener('click', () => {
+                        window.location.href = isInHtmlFolder ? 'connexion.html' : 'HTML/connexion.html';
+                    });
+                }
+            })
+            .catch(() => {
+                boutonProfil.innerHTML = `👤<span style="font-size: 12px; display: block; line-height: 1; margin-top: 4px;">Connexion</span>`;
+                boutonProfil.addEventListener('click', () => {
+                    window.location.href = isInHtmlFolder ? 'connexion.html' : 'HTML/connexion.html';
+                });
+            });
     }
     
     // --- 5. Accordeon FAQ ---
