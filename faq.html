@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>FAQ - CPasCher</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="barre-navigation">
+        <div class="logo">CPasCher</div>
+        
+        <div class="liens-navigation">
+            <a href="index.html">Accueil</a>
+            <a href="categorie.html">Produits</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html" class="actif">FAQ</a>
+        </div>
+        
+        <div class="conteneur-recherche">
+            <input type="text" class="champ-recherche" placeholder="Rechercher un produit..."/>
+            <span class="icone-recherche">🔎</span>
+        </div>
+        
+        <div class="actions-navigation">
+            <button class="bouton-icone" id="bouton-profil">👤</button>
+            <button class="bouton-icone" id="bouton-panier-icone"><a href="panier.html" style="color: white; text-decoration: none;">🛒<span class="badge" id="panier-badge">0</span></a></button>
+        </div>
+    </nav>
+
+    <!-- Section FAQ -->
+    <section class="faq-section">
+        <div class="section-conteneur">
+            <h1>Questions fréquemment posées</h1>
+            <p class="sous-titre">Trouvez les réponses aux questions les plus courantes</p>
+            
+            <div class="faq-items">
+                <div class="faq-item">
+                    <button class="faq-titre">📦 Comment fonctionne la livraison ?</button>
+                    <div class="faq-contenu">
+                        <p>
+                            Nous proposons une livraison standard (5-7 jours ouvrables) et une livraison express 
+                            (2-3 jours ouvrables). Les frais de livraison sont calculés automatiquement selon votre 
+                            adresse et nous offrons la livraison gratuite pour les commandes supérieures à 50€.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-titre">📍 Comment puis-je suivre ma commande ?</button>
+                    <div class="faq-contenu">
+                        <p>
+                            Un numéro de suivi vous est envoyé par email dès que votre commande est expédiée. 
+                            Vous pouvez utiliser ce numéro pour suivre le parcours de votre colis en temps réel.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-titre">🔄 Quelle est la politique de retour ?</button>
+                    <div class="faq-contenu">
+                        <p>
+                            Vous pouvez retourner un produit dans les 14 jours suivant la réception de votre commande, 
+                            sans frais et sans justification. Les frais de retour sont à votre charge sauf en cas 
+                            de produit défectueux ou de non-conformité.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-titre">💳 Quels modes de paiement acceptez-vous ?</button>
+                    <div class="faq-contenu">
+                        <p>
+                            Nous acceptons les cartes bancaires (Visa, Mastercard, American Express), PayPal et 
+                            les virements bancaires. Tous les paiements sont sécurisés et chiffrés.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-titre">🔒 Mes données sont-elles sécurisées ?</button>
+                    <div class="faq-contenu">
+                        <p>
+                            Oui, nous utilisons le chiffrement SSL/TLS pour protéger toutes les données sensibles. 
+                            Vos données personnelles ne sont jamais partagées avec des tiers sans votre consentement.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-titre">❓ Comment puis-je contacter le service client ?</button>
+                    <div class="faq-contenu">
+                        <p>
+                            Vous pouvez nous contacter via email (contact@cpascher.fr), téléphone (01 23 45 67 89) 
+                            ou par le formulaire de contact sur notre site. Nous répondons en général dans les 24 heures.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-titre">🎁 Y a-t-il des codes de réduction disponibles ?</button>
+                    <div class="faq-contenu">
+                        <p>
+                            Oui ! Inscrivez-vous à notre newsletter pour recevoir des codes de réduction exclusifs. 
+                            Nous proposons également des promotions régulières sur les produits sélectionnés.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-titre">🌍 Livrez-vous à l'international ?</button>
+                    <div class="faq-contenu">
+                        <p>
+                            Pour le moment, nous livrons en France métropolitaine et en Corse. 
+                            Nous travaillons sur l'extension à l'international. Veuillez contacter le service client 
+                            pour connaître les possibilités.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pied-de-page">
+        <div class="pied-de-page-conteneur">
+            <div class="pied-de-page-bas">
+                <p>© 2026 CPasCher. Tous droits pas trop réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Commande - CPasCher</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="barre-navigation">
+        <div class="logo">CPasCher</div>
+        
+        <div class="liens-navigation">
+            <a href="index.html">Accueil</a>
+            <a href="categorie.html">Produits</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        
+        <div class="conteneur-recherche">
+            <input type="text" class="champ-recherche" placeholder="Rechercher un produit..."/>
+            <span class="icone-recherche">🔎</span>
+        </div>
+        
+        <div class="actions-navigation">
+            <button class="bouton-icone" id="bouton-profil">👤</button>
+            <button class="bouton-icone" id="bouton-panier-icone"><a href="panier.html" style="color: white; text-decoration: none;">🛒<span class="badge" id="panier-badge">0</span></a></button>
+        </div>
+    </nav>
+
+    <!-- Formulaire de Commande -->
+    <section class="commande-section">
+        <div class="section-conteneur">
+            <h1>Finaliser votre commande</h1>
+            
+            <div class="commande-flex">
+                <div class="commande-form">
+                    <h2>Détails de livraison</h2>
+                    
+                    <form id="form-commande" method="POST" action="traiter-commande.php">
+                        <div class="groupe-formule">
+                            <label for="prenom-livraison">Prénom :</label>
+                            <input type="text" id="prenom-livraison" name="prenom" required/>
+                        </div>
+                        
+                        <div class="groupe-formule">
+                            <label for="nom-livraison">Nom :</label>
+                            <input type="text" id="nom-livraison" name="nom" required/>
+                        </div>
+                        
+                        <div class="groupe-formule">
+                            <label for="adresse-livraison">Adresse :</label>
+                            <input type="text" id="adresse-livraison" name="adresse" required/>
+                        </div>
+                        
+                        <div class="groupe-formule">
+                            <label for="code-postal">Code postal :</label>
+                            <input type="text" id="code-postal" name="code_postal" required/>
+                        </div>
+                        
+                        <div class="groupe-formule">
+                            <label for="ville">Ville :</label>
+                            <input type="text" id="ville" name="ville" required/>
+                        </div>
+                        
+                        <div class="groupe-formule">
+                            <label for="telephone">Téléphone :</label>
+                            <input type="tel" id="telephone" name="telephone" required/>
+                        </div>
+                        
+                        <h2 style="margin-top: 30px;">Détails de paiement</h2>
+                        
+                        <div class="groupe-formule">
+                            <label for="mode-paiement">Mode de paiement :</label>
+                            <select id="mode-paiement" name="mode_paiement" required>
+                                <option value="">Sélectionnez un mode</option>
+                                <option value="carte">Carte bancaire</option>
+                                <option value="paypal">PayPal</option>
+                                <option value="virement">Virement bancaire</option>
+                            </select>
+                        </div>
+                        
+                        <div class="groupe-formule">
+                            <label>
+                                <input type="checkbox" name="conditions" required/>
+                                J'accepte les <a href="conditions-generales.html">conditions générales</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="bouton bouton-primaire large">Passer la commande</button>
+                    </form>
+                </div>
+                
+                <div class="commande-resume">
+                    <h2>Résumé de la commande</h2>
+                    <div class="resume-ligne">
+                        <span>3 article(s)</span>
+                        <span>2 498,00 €</span>
+                    </div>
+                    <div class="resume-ligne">
+                        <span>Livraison</span>
+                        <span>Gratuit</span>
+                    </div>
+                    <div class="resume-ligne totale">
+                        <span>Total TTC</span>
+                        <span>2 498,00 €</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pied-de-page">
+        <div class="pied-de-page-conteneur">
+            <div class="pied-de-page-bas">
+                <p>© 2026 CPasCher. Tous droits pas trop réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>

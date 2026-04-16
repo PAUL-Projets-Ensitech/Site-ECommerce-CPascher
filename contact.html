@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact - CPasCher</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="barre-navigation">
+        <div class="logo">CPasCher</div>
+        
+        <div class="liens-navigation">
+            <a href="index.html">Accueil</a>
+            <a href="categorie.html">Produits</a>
+            <a href="contact.html" class="actif">Contact</a>
+            <a href="a-propos.html">À propos</a>
+        </div>
+        
+        <div class="conteneur-recherche">
+            <input type="text" class="champ-recherche" placeholder="Rechercher un produit..."/>
+            <span class="icone-recherche">🔎</span>
+        </div>
+        
+        <div class="actions-navigation">
+            <button class="bouton-icone" id="bouton-profil">👤</button>
+            <button class="bouton-icone" id="bouton-panier-icone"><a href="panier.html" style="color: white; text-decoration: none;">🛒<span class="badge" id="panier-badge">0</span></a></button>
+        </div>
+    </nav>
+
+    <!-- Section Contact -->
+    <section class="contact-section">
+        <div class="section-conteneur">
+            <h1>Nous contacter</h1>
+            <p class="sous-titre">Vous avez une question ? Nous sommes là pour vous aider.</p>
+            
+            <div class="contact-flex">
+                <div class="formulaire-contact">
+                    <form id="form-contact" method="POST" action="traiter-contact.php">
+                        <div class="groupe-formule">
+                            <label for="nom-contact">Nom complet :</label>
+                            <input type="text" id="nom-contact" name="nom" required placeholder="Votre nom complet"/>
+                        </div>
+                        
+                        <div class="groupe-formule">
+                            <label for="email-contact">Adresse email :</label>
+                            <input type="email" id="email-contact" name="email" required placeholder="votre.email@exemple.com"/>
+                        </div>
+                        
+                        <div class="groupe-formule">
+                            <label for="sujet-contact">Sujet :</label>
+                            <select id="sujet-contact" name="sujet" required>
+                                <option value="">Sélectionnez un sujet</option>
+                                <option value="commande">Question sur une commande</option>
+                                <option value="produit">Question sur un produit</option>
+                                <option value="retour">Retour ou remboursement</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="groupe-formule">
+                            <label for="message-contact">Message :</label>
+                            <textarea id="message-contact" name="message" rows="6" required placeholder="Votre message..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bouton bouton-primaire">Envoyer le message</button>
+                    </form>
+                    <div id="message-feedback"></div>
+                </div>
+                
+                <div class="info-contact">
+                    <h3>Coordonnées</h3>
+                    <p><strong>Email :</strong> contact@cpascher.fr</p>
+                    <p><strong>Téléphone :</strong> 01 23 45 67 89</p>
+                    <p><strong>Horaires :</strong> Lun-Ven 09:00-18:00</p>
+                    
+                    <h3 style="margin-top: 30px;">Adresse</h3>
+                    <p>CPasCher<br/>123 Rue du Commerce<br/>75001 Paris<br/>France</p>
+                    
+                    <h3 style="margin-top: 30px;">Réseaux sociaux</h3>
+                    <div class="social-links">
+                        <a href="#">🐦 Twitter</a>
+                        <a href="#">📷 Instagram</a>
+                        <a href="#">f Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pied-de-page">
+        <div class="pied-de-page-conteneur">
+            <div class="pied-de-page-bas">
+                <p>© 2026 CPasCher. Tous droits pas trop réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>

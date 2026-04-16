@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Catégories - CPasCher</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="barre-navigation">
+        <div class="logo">CPasCher</div>
+        
+        <div class="liens-navigation">
+            <a href="index.html">Accueil</a>
+            <a href="categorie.html" class="actif">Produits</a>
+            <a href="contact.html">Contact</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="mentions-legales.html">Mentions légales</a>
+        </div>
+        
+        <div class="conteneur-recherche">
+            <input type="text" class="champ-recherche" placeholder="Rechercher un produit..."/>
+            <span class="icone-recherche">🔎</span>
+        </div>
+        
+        <div class="actions-navigation">
+            <button class="bouton-icone" id="bouton-profil">👤</button>
+            <button class="bouton-icone" id="bouton-panier-icone"><a href="panier.html" style="color: white; text-decoration: none;">🛒<span class="badge" id="panier-badge">0</span></a></button>
+        </div>
+    </nav>
+
+    <!-- Section Catégories -->
+    <section class="categories-detail">
+        <div class="section-conteneur">
+            <h1>Nos catégories de produits</h1>
+            <p class="sous-titre">Parcourez notre sélection complète</p>
+            
+            <div class="grille-categories-detail">
+                <div class="categorie-card">
+                    <img src="https://placehold.co/400x300/e0e0e0/000000/png?text=Electronique" alt="Électronique"/>
+                    <h3>Électronique</h3>
+                    <p>Téléphones, tablettes, accessoires...</p>
+                    <a href="produit.html?categorie=1" class="bouton-categorie">Voir les produits</a>
+                </div>
+                
+                <div class="categorie-card">
+                    <img src="https://placehold.co/400x300/e0e0e0/000000/png?text=Informatique" alt="Informatique"/>
+                    <h3>Informatique</h3>
+                    <p>Laptops, claviers, souris...</p>
+                    <a href="produit.html?categorie=2" class="bouton-categorie">Voir les produits</a>
+                </div>
+                
+                <div class="categorie-card">
+                    <img src="https://placehold.co/400x300/e0e0e0/000000/png?text=Maison" alt="Maison"/>
+                    <h3>Maison & Décoration</h3>
+                    <p>Meubles, décoration, accessoires...</p>
+                    <a href="produit.html?categorie=3" class="bouton-categorie">Voir les produits</a>
+                </div>
+                
+                <div class="categorie-card">
+                    <img src="https://placehold.co/400x300/e0e0e0/000000/png?text=Jardinage" alt="Jardinage"/>
+                    <h3>Jardin & Plein air</h3>
+                    <p>Outils, plantes, accessoires jardinage...</p>
+                    <a href="produit.html?categorie=4" class="bouton-categorie">Voir les produits</a>
+                </div>
+                
+                <div class="categorie-card">
+                    <img src="https://placehold.co/400x300/e0e0e0/000000/png?text=Vetements" alt="Vêtements"/>
+                    <h3>Mode & Vêtements</h3>
+                    <p>Habits, chaussures, accessoires...</p>
+                    <a href="produit.html?categorie=5" class="bouton-categorie">Voir les produits</a>
+                </div>
+                
+                <div class="categorie-card">
+                    <img src="https://placehold.co/400x300/e0e0e0/000000/png?text=Bricolage" alt="Bricolage"/>
+                    <h3>Bricolage</h3>
+                    <p>Outils, matériaux, équipements...</p>
+                    <a href="produit.html?categorie=6" class="bouton-categorie">Voir les produits</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pied-de-page">
+        <div class="pied-de-page-conteneur">
+            <div class="pied-de-page-grille">
+                <div class="pied-de-page-colonne">
+                    <div class="pied-de-page-logo">CPasCher</div>
+                    <p class="pied-de-page-description">CDiscount en beaucoup moins cher.</p>
+                    <div class="pied-de-page-social">
+                        <span>🐦</span>
+                        <span>📷</span>
+                        <span>📧</span>
+                    </div>
+                </div>
+                
+                <div class="pied-de-page-colonne">
+                    <h4>Détails du projet</h4>
+                    <ul>
+                        <li><a href="https://www.ensitech.eu/">École Ensitech</a></li>
+                        <li><a href="https://github.com/PAUL-Projets-Ensitech/Site-ECommerce-CPascher">Code Source</a></li>
+                        <li><a href="https://www.cdiscount.fr/">Site officiel</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pied-de-page-colonne">
+                    <h4>Aides & Contacts</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#">Paiement sécurisé</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pied-de-page-colonne">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="conditions-generales.html">CGV</a></li>
+                        <li><a href="a-propos.html">À propos</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pied-de-page-bas">
+                <p>© 2026 CPasCher. Tous droits pas trop réservés.</p>
+                <div class="pied-de-page-paiements">
+                    <span>💳</span>
+                    <span>💰</span>
+                    <span>📶</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Confirmation de commande - CPasCher</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="barre-navigation">
+        <div class="logo">CPasCher</div>
+        
+        <div class="liens-navigation">
+            <a href="index.html">Accueil</a>
+            <a href="categorie.html">Produits</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        
+        <div class="conteneur-recherche">
+            <input type="text" class="champ-recherche" placeholder="Rechercher un produit..."/>
+            <span class="icone-recherche">🔎</span>
+        </div>
+        
+        <div class="actions-navigation">
+            <button class="bouton-icone" id="bouton-profil">👤</button>
+            <button class="bouton-icone" id="bouton-panier-icone"><a href="panier.html" style="color: white; text-decoration: none;">🛒<span class="badge" id="panier-badge">0</span></a></button>
+        </div>
+    </nav>
+
+    <!-- Confirmation de commande -->
+    <section class="confirmation-section">
+        <div class="section-conteneur">
+            <div class="confirmation-box">
+                <div class="confirmation-icone">✓</div>
+                <h1>Commande confirmee !</h1>
+                <p class="sous-titre">Merci pour votre achat</p>
+                
+                <div class="confirmation-details">
+                    <p>Votre commande numero <strong>#CMD-2026-12345</strong> a ete confirmee.</p>
+                    <p>Un email de confirmation a ete envoye a <strong>votre.email@exemple.com</strong></p>
+                    
+                    <h2>Resumé de votre commande</h2>
+                    <div class="commande-recap">
+                        <div class="recap-ligne">
+                            <span>Sous-total</span>
+                            <span>2 498,00 EUR</span>
+                        </div>
+                        <div class="recap-ligne">
+                            <span>Frais de livraison</span>
+                            <span>Gratuit</span>
+                        </div>
+                        <div class="recap-ligne total">
+                            <span>Total TTC</span>
+                            <span>2 498,00 EUR</span>
+                        </div>
+                    </div>
+                    
+                    <h3>Livraison prevue</h3>
+                    <p>Entre le 20 et le 25 janvier 2026</p>
+                    <p class="adresse-livraison">
+                        Jean Dupont<br/>
+                        123 Rue du Commerce<br/>
+                        75001 Paris<br/>
+                        France
+                    </p>
+                    
+                    <h3>Numero de suivi</h3>
+                    <p class="numero-suivi">FR123456789012</p>
+                    <p><a href="#">Suivre ma commande</a></p>
+                </div>
+                
+                <div class="actions-confirmation">
+                    <a href="index.html" class="bouton bouton-primaire">Retour a l'accueil</a>
+                    <a href="categorie.html" class="bouton bouton-secondaire">Continuer l'achat</a>
+                </div>
+                
+                <div class="info-confirmation">
+                    <h3>Prochaines etapes</h3>
+                    <ol>
+                        <li>Preparation de votre commande</li>
+                        <li>Expedition</li>
+                        <li>Transport</li>
+                        <li>Livraison</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pied-de-page">
+        <div class="pied-de-page-conteneur">
+            <div class="pied-de-page-bas">
+                <p>© 2026 CPasCher. Tous droits pas trop reserves.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>

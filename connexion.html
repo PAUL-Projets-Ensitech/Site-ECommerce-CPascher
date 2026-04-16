@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Connexion - CPasCher</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="barre-navigation">
+        <div class="logo">CPasCher</div>
+        
+        <div class="liens-navigation">
+            <a href="index.html">Accueil</a>
+            <a href="categorie.html">Produits</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        
+        <div class="conteneur-recherche">
+            <input type="text" class="champ-recherche" placeholder="Rechercher un produit..."/>
+            <span class="icone-recherche">🔎</span>
+        </div>
+        
+        <div class="actions-navigation">
+            <button class="bouton-icone" id="bouton-profil">👤</button>
+            <button class="bouton-icone" id="bouton-panier-icone"><a href="panier.html" style="color: white; text-decoration: none;">🛒<span class="badge" id="panier-badge">0</span></a></button>
+        </div>
+    </nav>
+
+    <!-- Formulaire de Connexion -->
+    <section class="formulaire-section">
+        <div class="forme-conteneur">
+            <div class="formulaire-box">
+                <h1>Connexion</h1>
+                <p>Connectez-vous à votre compte CPasCher</p>
+                
+                <form id="form-connexion" method="POST" action="traiter-connexion.php">
+                    <div class="groupe-formule">
+                        <label for="email">Adresse email :</label>
+                        <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com"/>
+                    </div>
+                    
+                    <div class="groupe-formule">
+                        <label for="mot_de_passe">Mot de passe :</label>
+                        <input type="password" id="mot_de_passe" name="mot_de_passe" required placeholder="Votre mot de passe"/>
+                    </div>
+                    
+                    <div class="groupe-formule">
+                        <label>
+                            <input type="checkbox" name="se_souvenir"/> Se souvenir de moi
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="bouton bouton-primaire large">Se connecter</button>
+                </form>
+                
+                <div class="formulaire-liens">
+                    <p>Pas encore de compte ? <a href="inscription.html">S'inscrire</a></p>
+                    <p><a href="#">Mot de passe oublié ?</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pied-de-page">
+        <div class="pied-de-page-conteneur">
+            <div class="pied-de-page-bas">
+                <p>© 2026 CPasCher. Tous droits pas trop réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>

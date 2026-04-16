@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mon compte - CPasCher</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="barre-navigation">
+        <div class="logo">CPasCher</div>
+        
+        <div class="liens-navigation">
+            <a href="index.html">Accueil</a>
+            <a href="categorie.html">Produits</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        
+        <div class="conteneur-recherche">
+            <input type="text" class="champ-recherche" placeholder="Rechercher un produit..."/>
+            <span class="icone-recherche">🔎</span>
+        </div>
+        
+        <div class="actions-navigation">
+            <button class="bouton-icone" id="bouton-profil">👤</button>
+            <button class="bouton-icone" id="bouton-panier-icone"><a href="panier.html" style="color: white; text-decoration: none;">🛒<span class="badge" id="panier-badge">0</span></a></button>
+        </div>
+    </nav>
+
+    <!-- Mon compte -->
+    <section class="mon-compte-section">
+        <div class="section-conteneur">
+            <h1>Mon compte</h1>
+            
+            <div class="compte-flex">
+                <div class="compte-menu">
+                    <ul>
+                        <li><a href="#" class="menu-actif">Mes informations</a></li>
+                        <li><a href="#">Mes commandes</a></li>
+                        <li><a href="#">Mes adresses</a></li>
+                        <li><a href="#">Mes paiements</a></li>
+                        <li><a href="#">Mes favoris</a></li>
+                        <li><a href="#">Se deconnecter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="compte-contenu">
+                    <h2>Mes informations</h2>
+                    
+                    <div class="info-bloc">
+                        <h3>Profil</h3>
+                        <p><strong>Prenom :</strong> Jean</p>
+                        <p><strong>Nom :</strong> Dupont</p>
+                        <p><strong>Email :</strong> jean.dupont@exemple.com</p>
+                        <button class="bouton bouton-secondaire">Modifier mes infos</button>
+                    </div>
+                    
+                    <div class="info-bloc">
+                        <h3>Historique de commandes</h3>
+                        <table class="tableau-commandes">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Numero de commande</th>
+                                    <th>Total</th>
+                                    <th>Statut</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>15/01/2026</td>
+                                    <td>#CMD-2026-001</td>
+                                    <td>799,99 EUR</td>
+                                    <td><span class="badge-statut">Livree</span></td>
+                                    <td><a href="#">Details</a></td>
+                                </tr>
+                                <tr>
+                                    <td>10/01/2026</td>
+                                    <td>#CMD-2026-002</td>
+                                    <td>249,50 EUR</td>
+                                    <td><span class="badge-statut">En cours de livraison</span></td>
+                                    <td><a href="#">Suivre</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="info-bloc">
+                        <h3>Adresse de livraison principale</h3>
+                        <p>
+                            Jean Dupont<br/>
+                            123 Rue de la Paix<br/>
+                            75001 Paris<br/>
+                            France
+                        </p>
+                        <button class="bouton bouton-secondaire">Modifier</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pied-de-page">
+        <div class="pied-de-page-conteneur">
+            <div class="pied-de-page-bas">
+                <p>© 2026 CPasCher. Tous droits pas trop reserves.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>

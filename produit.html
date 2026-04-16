@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Détails du produit - CPasCher</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="barre-navigation">
+        <div class="logo">CPasCher</div>
+        
+        <div class="liens-navigation">
+            <a href="index.html">Accueil</a>
+            <a href="categorie.html">Produits</a>
+            <a href="contact.html">Contact</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="mentions-legales.html">Mentions légales</a>
+        </div>
+        
+        <div class="conteneur-recherche">
+            <input type="text" class="champ-recherche" placeholder="Rechercher un produit..."/>
+            <span class="icone-recherche">🔎</span>
+        </div>
+        
+        <div class="actions-navigation">
+            <button class="bouton-icone" id="bouton-profil">👤</button>
+            <button class="bouton-icone" id="bouton-panier-icone"><a href="panier.html" style="color: white; text-decoration: none;">🛒<span class="badge" id="panier-badge">0</span></a></button>
+        </div>
+    </nav>
+
+    <!-- Détail du produit -->
+    <section class="detail-produit">
+        <div class="section-conteneur">
+            <div class="produit-detail-flex">
+                <div class="produit-image">
+                    <img src="https://placehold.co/500x500/e0e0e0/000000/png?text=MacBook" alt="Produit"/>
+                </div>
+                
+                <div class="produit-info">
+                    <h1>MacBook Air M2 13" Gris Sidéral - 256Go SSD</h1>
+                    
+                    <div class="produit-donnees">
+                        <span class="rating">⭐ 4.8/5 (247 avis)</span>
+                        <span class="stock">En stock (12 articles restants)</span>
+                    </div>
+                    
+                    <div class="produit-prix">
+                        <span class="prix-actuel">999,00 €</span>
+                        <span class="ancien-prix">1199,00 €</span>
+                        <span class="reduction">-17%</span>
+                    </div>
+                    
+                    <p class="description-produit">
+                        Le MacBook Air M2 offre une puissance exceptionnelle avec le processeur Apple M2. 
+                        Idéal pour les professionnels créatifs et les étudiants.
+                    </p>
+                    
+                    <div class="options-produit">
+                        <label>Quantité :
+                            <input type="number" id="quantite-produit" min="1" max="10" value="1"/>
+                        </label>
+                    </div>
+                    
+                    <div class="actions-produit">
+                        <button class="bouton bouton-primaire" id="ajouter-panier">🛒 Ajouter au panier</button>
+                        <button class="bouton bouton-secondaire">❤️ Ajouter aux favoris</button>
+                    </div>
+                    
+                    <div class="caracteristiques">
+                        <h3>Caractéristiques principales</h3>
+                        <ul>
+                            <li>Processeur : Apple M2</li>
+                            <li>Écran : 13 pouces Retina</li>
+                            <li>RAM : 8 Go unifié</li>
+                            <li>Stockage : 256 Go SSD</li>
+                            <li>Batterie : jusqu'à 18 heures</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="avis-produit">
+                <h3>Avis clients</h3>
+                <div class="avis-item">
+                    <strong>Jean M.</strong> - ⭐⭐⭐⭐⭐
+                    <p>Excellent produit, livraison rapide. Très satisfait !</p>
+                </div>
+                <div class="avis-item">
+                    <strong>Marie L.</strong> - ⭐⭐⭐⭐
+                    <p>Bonne qualité, prix très compétitif comparé à la concurrence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pied-de-page">
+        <div class="pied-de-page-conteneur">
+            <div class="pied-de-page-grille">
+                <div class="pied-de-page-colonne">
+                    <div class="pied-de-page-logo">CPasCher</div>
+                    <p class="pied-de-page-description">CDiscount en beaucoup moins cher.</p>
+                </div>
+                
+                <div class="pied-de-page-colonne">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="categorie.html">Produits</a></li>
+                        <li><a href="panier.html">Panier</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pied-de-page-colonne">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#">Retours</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pied-de-page-colonne">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="conditions-generales.html">CGV</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pied-de-page-bas">
+                <p>© 2026 CPasCher. Tous droits pas trop réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>
