@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mot_de_passe = isset($_POST['mot_de_passe']) ? $_POST['mot_de_passe'] : '';
     $confirmer_mdp = isset($_POST['confirmer_mdp']) ? $_POST['confirmer_mdp'] : '';
     $adresse = isset($_POST['adresse']) ? htmlspecialchars(trim($_POST['adresse'])) : '';
-    
+
     // Validations
     if (empty($prenom) || empty($nom) || empty($email) || empty($mot_de_passe)) {
         $response['message'] = 'Tous les champs obligatoires doivent être remplis.';
@@ -27,25 +27,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Vérification simple que l'email n'existe pas déjà
             $stmt = $pdo->prepare('SELECT id_client FROM CLIENT WHERE email = :email');
             $stmt->execute([':email' => $email]);
-            
+
             if ($stmt->fetch()) {
                 $response['message'] = 'Un compte existe déjà avec cet email.';
             } else {
                 // Instanciation de l'objet Client pour y stocker les informations (POO)
                 $nouveauClient = new Client(null, $nom, $prenom, $email, $mot_de_passe, $adresse);
-                
+
                 // Insertion en base de données à l'aide des accesseurs (getters) de notre objet Client
                 $stmt = $pdo->prepare('INSERT INTO CLIENT (prenom, nom, email, mot_de_passe, adresse_livraison) 
                                        VALUES (:prenom, :nom, :email, :pwd, :adresse)');
-                
+
                 $success = $stmt->execute([
                     ':prenom' => $nouveauClient->getPrenom(),
                     ':nom'    => $nouveauClient->getNom(),
                     ':email'  => $nouveauClient->getEmail(),
                     ':pwd'    => $nouveauClient->getMotDePasse(),
-                    ':adresse'=> $nouveauClient->getAdresseLivraison()
+                    ':adresse' => $nouveauClient->getAdresseLivraison()
                 ]);
-                
+
                 if ($success) {
                     $response['success'] = true;
                     $response['message'] = 'Inscription reussie.';
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $response['message'] = 'Erreur lors inscription.';
         }
     }
-    
+
     header('Content-Type: application/json; charset=utf-8');
     echo json_encode($response);
 } else {

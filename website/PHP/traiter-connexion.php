@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupération des données
     $email = isset($_POST['email']) ? htmlspecialchars(trim($_POST['email'])) : '';
     $mot_de_passe = isset($_POST['mot_de_passe']) ? $_POST['mot_de_passe'] : '';
-    
+
     // Validation
     if (empty($email) || empty($mot_de_passe)) {
         $response['message'] = 'Email et mot de passe requis.';
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $pdo->prepare('SELECT id_client, nom, prenom, email, mot_de_passe, adresse_livraison FROM CLIENT WHERE email = :email');
             $stmt->execute([':email' => $email]);
             $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
-            
+
             if ($clientData && $mot_de_passe === $clientData['mot_de_passe']) {
                 // Instanciation de l'objet Client avec les données de la base (POO)
                 $client = new Client(
@@ -31,11 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $clientData['mot_de_passe'],
                     $clientData['adresse_livraison']
                 );
-                
+
                 // Connexion réussie, on remplit la session à l'aide des accesseurs de l'objet
                 $_SESSION['client_id'] = $client->getIdClient();
                 $_SESSION['client_email'] = $client->getEmail();
-                
+
                 $response['success'] = true;
                 $response['message'] = 'Connexion réussie.';
                 $response['redirect'] = '../HTML/mon-compte.html';
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $response['message'] = 'Erreur lors de la connexion.';
         }
     }
-    
+
     header('Content-Type: application/json; charset=utf-8');
     echo json_encode($response);
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'deconnexion') {
@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare('SELECT id_client, nom, prenom, email, mot_de_passe, adresse_livraison FROM CLIENT WHERE id_client = ?');
         $stmt->execute([$_SESSION['client_id']]);
         $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
-        
+
         if ($clientData) {
             // Instanciation de l'objet Client (POO)
             $client = new Client(
@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $clientData['mot_de_passe'],
                 $clientData['adresse_livraison']
             );
-            
+
             $response = [
                 'success' => true,
                 'client' => [
