@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require_once 'OO/Client.php';
 
 $response = array('success' => false, 'message' => '');
 
@@ -15,19 +16,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $response['message'] = 'Email invalide.';
     } else {
         try {
-            // Recherche du client dans la base de données
-            $stmt = $pdo->prepare('SELECT id_client, mot_de_passe FROM CLIENT WHERE email = :email');
-            $stmt->execute([':email' => $email]);
-            $client = $stmt->fetch(PDO::FETCH_ASSOC);
+            // Recherche du client dans la base de données en utilisant la POO
+            $client = Client::trouverParEmail($pdo, $email);
             
-            if ($client && $mot_de_passe === $client['mot_de_passe']) {
+            if ($client !== null && $mot_de_passe === $client->getMotDePasse()) {
                 // Connexion réussie
-                $_SESSION['client_id'] = $client['id_client'];
+                $_SESSION['client_id'] = $client->getIdClient();
                 $_SESSION['client_email'] = $email;
                 
                 // Si la case "Se souvenir de moi" est cochée
                 // if (isset($_POST['se_souvenir']) && $_POST['se_souvenir'] === 'on') {
-                //     setCookie('se_souvenir', $client['id_client'], {'max-age': 3600});
+                //     setCookie('se_souvenir', $client->getIdClient(), {'max-age': 3600});
                 // }
                 
                 $response['success'] = true;
@@ -84,14 +83,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'profil') {
     if (isset($_SESSION['client_id'])) {
-        $stmt = $pdo->prepare('SELECT nom, prenom, email, adresse_livraison FROM CLIENT WHERE id_client = ?');
-        $stmt->execute([$_SESSION['client_id']]);
-        $client = $stmt->fetch(PDO::FETCH_ASSOC);
+        // Récupération des infos du profil via la classe Client (POO)
+        $client = Client::trouverParId($pdo, (int)$_SESSION['client_id']);
         
-        if ($client) {
+        if ($client !== null) {
             $response = [
                 'success' => true,
-                'client' => $client
+                'client' => [
+                    'nom' => $client->getNom(),
+                    'prenom' => $client->getPrenom(),
+                    'email' => $client->getEmail(),
+                    'adresse_livraison' => $client->getAdresseLivraison()
+                ]
             ];
         } else {
             $response['message'] = 'Utilisateur introuvable';

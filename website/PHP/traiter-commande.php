@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require_once 'OO/Client.php';
 
 $response = array('success' => false, 'message' => '');
 
@@ -19,20 +20,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id_client = isset($_SESSION['client_id']) ? $_SESSION['client_id'] : null;
             $prix_total = 2498.00;
             
-            $stmt = $pdo->prepare('INSERT INTO COMMANDE (id_client, statut_commande, prix_total, date_commande)
-                                   VALUES (:id_client, :statut, :prix, NOW())');
-            $stmt->execute([
-                ':id_client' => $id_client,
-                ':statut' => 'En attente',
-                ':prix' => $prix_total
-            ]);
+            // Récupération ou création de l'objet Client
+            if ($id_client !== null) {
+                $client = Client::trouverParId($pdo, (int)$id_client);
+            } else {
+                // Client invité
+                $client = new Client(
+                    null,
+                    $nom,
+                    $prenom,
+                    '', // email invité non requis pour la commande simple
+                    '', // mot de passe vide
+                    $adresse . ', ' . $code_postal . ' ' . $ville
+                );
+            }
+            
+            if ($client === null) {
+                throw new Exception("Client introuvable.");
+            }
+            
+            // Appel de la méthode UML : + passerCommande(): void
+            $client->passerCommande($pdo, $prix_total);
             
             $response['success'] = true;
             $response['message'] = 'Commande validee avec succes !';
             $response['redirect'] = 'confirmation.html';
             
         } catch (Exception $e) {
-            $response['message'] = 'Erreur lors traitement commande.';
+            $response['message'] = 'Erreur lors traitement commande : ' . $e->getMessage();
         }
     }
     

@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require_once 'OO/Client.php';
 
 $response = array('success' => false, 'message' => '');
 
@@ -23,26 +24,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $response['message'] = 'Les mots de passe ne correspondent pas.';
     } else {
         try {
-            // Vérification que l'email n'existe pas déjà
-            $stmt = $pdo->prepare('SELECT id_client FROM CLIENT WHERE email = :email');
-            $stmt->execute([':email' => $email]);
+            // Vérification que l'email n'existe pas déjà en utilisant la POO
+            $clientExistant = Client::trouverParEmail($pdo, $email);
             
-            if ($stmt->fetch()) {
+            if ($clientExistant !== null) {
                 $response['message'] = 'Un compte existe déjà avec cet email.';
             } else {
-                $stmt = $pdo->prepare('INSERT INTO CLIENT (prenom, nom, email, mot_de_passe, adresse_livraison) 
-                                       VALUES (:prenom, :nom, :email, :pwd, :adresse)');
-                $stmt->execute([
-                    ':prenom' => $prenom,
-                    ':nom' => $nom,
-                    ':email' => $email,
-                    ':pwd' => $mot_de_passe,
-                    ':adresse' => $adresse
-                ]);
+                // Instanciation de l'objet Client
+                $nouveauClient = new Client(null, $nom, $prenom, $email, $mot_de_passe, $adresse);
                 
-                $response['success'] = true;
-                $response['message'] = 'Inscription reussie.';
-                $response['redirect'] = '../HTML/connexion.html';
+                // Inscription via la méthode de la classe Client
+                if ($nouveauClient->inscrire($pdo)) {
+                    $response['success'] = true;
+                    $response['message'] = 'Inscription reussie.';
+                    $response['redirect'] = '../HTML/connexion.html';
+                } else {
+                    $response['message'] = 'Erreur lors de l\'enregistrement de l\'utilisateur.';
+                }
             }
         } catch (Exception $e) {
             $response['message'] = 'Erreur lors inscription.';
