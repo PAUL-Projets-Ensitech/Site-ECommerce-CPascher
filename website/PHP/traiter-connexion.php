@@ -16,18 +16,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $response['message'] = 'Email invalide.';
     } else {
         try {
-            // Recherche du client dans la base de données en utilisant la POO
-            $client = Client::trouverParEmail($pdo, $email);
+            // Recherche du client dans la base de données (SQL classique)
+            $stmt = $pdo->prepare('SELECT id_client, nom, prenom, email, mot_de_passe, adresse_livraison FROM CLIENT WHERE email = :email');
+            $stmt->execute([':email' => $email]);
+            $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
             
-            if ($client !== null && $mot_de_passe === $client->getMotDePasse()) {
-                // Connexion réussie
-                $_SESSION['client_id'] = $client->getIdClient();
-                $_SESSION['client_email'] = $email;
+            if ($clientData && $mot_de_passe === $clientData['mot_de_passe']) {
+                // Instanciation de l'objet Client avec les données de la base (POO)
+                $client = new Client(
+                    (int)$clientData['id_client'],
+                    $clientData['nom'],
+                    $clientData['prenom'],
+                    $clientData['email'],
+                    $clientData['mot_de_passe'],
+                    $clientData['adresse_livraison']
+                );
                 
-                // Si la case "Se souvenir de moi" est cochée
-                // if (isset($_POST['se_souvenir']) && $_POST['se_souvenir'] === 'on') {
-                //     setCookie('se_souvenir', $client->getIdClient(), {'max-age': 3600});
-                // }
+                // Connexion réussie, on remplit la session à l'aide des accesseurs de l'objet
+                $_SESSION['client_id'] = $client->getIdClient();
+                $_SESSION['client_email'] = $client->getEmail();
                 
                 $response['success'] = true;
                 $response['message'] = 'Connexion réussie.';
@@ -83,10 +90,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'profil') {
     if (isset($_SESSION['client_id'])) {
-        // Récupération des infos du profil via la classe Client (POO)
-        $client = Client::trouverParId($pdo, (int)$_SESSION['client_id']);
+        // Recherche des données du profil (SQL classique)
+        $stmt = $pdo->prepare('SELECT id_client, nom, prenom, email, mot_de_passe, adresse_livraison FROM CLIENT WHERE id_client = ?');
+        $stmt->execute([$_SESSION['client_id']]);
+        $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
         
-        if ($client !== null) {
+        if ($clientData) {
+            // Instanciation de l'objet Client (POO)
+            $client = new Client(
+                (int)$clientData['id_client'],
+                $clientData['nom'],
+                $clientData['prenom'],
+                $clientData['email'],
+                $clientData['mot_de_passe'],
+                $clientData['adresse_livraison']
+            );
+            
             $response = [
                 'success' => true,
                 'client' => [
