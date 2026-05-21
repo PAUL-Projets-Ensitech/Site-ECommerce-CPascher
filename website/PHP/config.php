@@ -1,6 +1,6 @@
 <?php
 // Configuration de la base de données
-define('DB_HOST', 'localhost:3307');
+define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'site-ecommerce-cpascher');
@@ -26,4 +26,3 @@ if (session_status() === PHP_SESSION_NONE) {
 // if (!isset($_SESSION['client_id']) && isset($_COOKIE['se_souvenir'])) {
 //     $_SESSION['client_id'] = $_COOKIE['se_souvenir'];
 // }
-?>
