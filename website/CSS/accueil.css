@@ -1,16 +1,16 @@
-/* --- Accueil : styles simplifiés --- */
+/* --- Accueil : styles modernes et premium --- */
 
-/* Hero */
+/* Hero Section */
 .hero {
-  background: #1d4ed8;
+  background: linear-gradient(135deg, var(--primary) 0%, #1e1b4b 100%);
   color: #fff;
-  padding: 56px 40px;
+  padding: 80px 40px;
 }
 
 .hero-contenu {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 60px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -21,38 +21,47 @@
 }
 
 .hero-texte h1 {
-  font-size: 44px;
+  font-size: 48px;
   line-height: 1.15;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .hero-texte p {
   font-size: 18px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
+  color: #cbd5e1;
 }
 
 .hero-boutons {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 .hero-image {
-  border-radius: 16px;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: var(--transition-smooth);
 }
 
-/* Catégories */
+.hero-image:hover {
+  transform: scale(1.02);
+}
+
+/* Catégories de l'accueil */
 .categories {
-  padding: 48px 40px;
-  background-color: #fff;
+  padding: 60px 40px;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .categories-conteneur {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 36px;
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -62,142 +71,202 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  transition: var(--transition-smooth);
+}
+
+.categorie-element:hover {
+  transform: translateY(-4px);
 }
 
 .cercle-icone {
-  width: 74px;
-  height: 74px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background-color: #edf4ff;
+  background-color: #f1f5f9;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
-  transition: background-color 0.2s;
+  font-size: 32px;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-sm);
 }
 
 .categorie-element:hover .cercle-icone {
-  background-color: #dbeafe;
+  background-color: rgba(79, 70, 229, 0.1);
+  color: var(--primary);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.1);
 }
 
 .categorie-nom {
   font-weight: 700;
   font-size: 14px;
+  color: var(--text-color);
+  transition: var(--transition-smooth);
 }
 
-/* Ventes flash */
+.categorie-element:hover .categorie-nom {
+  color: var(--primary);
+}
+
+/* Section Ventes Flash */
 .ventes-flash {
-  padding: 56px 40px;
-  background-color: #edf4ff;
+  padding: 80px 40px;
+  background-color: #f1f5f9;
 }
 
 .section-entete {
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 
 .section-titre h2 {
-  font-size: 30px;
-  margin-bottom: 6px;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
 }
 
 .section-titre p {
-  color: #475569;
+  color: var(--text-light);
 }
 
 .grille-produits {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
 }
 
 .carte-produit {
-  background-color: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 14px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.carte-produit:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: #cbd5e1;
 }
 
 .conteneur-image-produit {
   position: relative;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  background-color: #f8fafc;
+  background-color: var(--bg-color);
+  aspect-ratio: 1;
+}
+
+.conteneur-image-produit img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.carte-produit:hover .conteneur-image-produit img {
+  transform: scale(1.05);
 }
 
 .etiquette-reduction {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #ef4444;
+  top: 12px;
+  left: 12px;
+  background-color: var(--accent);
   color: #fff;
-  padding: 4px 8px;
-  border-radius: 8px;
+  padding: 4px 10px;
+  border-radius: 6px;
   font-size: 12px;
   font-weight: 700;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(225, 29, 72, 0.4);
 }
 
 .nom-produit {
   font-size: 16px;
-  line-height: 1.35;
-  min-height: 44px;
+  font-weight: 600;
+  line-height: 1.4;
+  min-height: 48px;
+  color: var(--text-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .prix-produit {
   display: flex;
   align-items: baseline;
   gap: 10px;
+  margin-top: auto;
 }
 
 .prix {
   font-size: 22px;
   font-weight: 800;
-  color: #bb0025;
+  color: var(--accent);
 }
 
 .bouton-panier {
-  margin-top: auto;
+  margin-top: 10px;
   border: none;
-  border-radius: 10px;
-  background-color: #1d4ed8;
+  border-radius: var(--radius-md);
+  background-color: var(--primary);
   color: #fff;
   font-weight: 700;
-  padding: 11px 14px;
+  padding: 12px 14px;
   cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.15);
 }
 
 .bouton-panier:hover {
-  background-color: #1e40af;
+  background-color: var(--primary-hover);
+  box-shadow: 0 6px 14px rgba(79, 70, 229, 0.25);
 }
 
-/* Promo */
+/* Section Promo (Bento Grid) */
 .section-promo {
-  padding: 56px 40px;
-  background-color: #f7f9ff;
+  padding: 80px 40px;
+  background-color: var(--card-bg);
 }
 
 .grille-promo {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 20px;
+  gap: 30px;
+  margin-top: 30px;
 }
 
 .promo-colonne-droite {
   display: grid;
-  gap: 20px;
+  gap: 30px;
 }
 
 .carte-promo {
   position: relative;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  min-height: 300px;
+  min-height: 320px;
   display: flex;
   align-items: flex-end;
-  padding: 24px;
+  padding: 30px;
   color: #fff;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.carte-promo:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
 .carte-promo img {
@@ -206,55 +275,84 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.carte-promo:hover img {
+  transform: scale(1.05);
 }
 
 .promo-superposition {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.2) 100%);
+  z-index: 1;
 }
 
 .promo-contenu {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .promo-grande {
-  min-height: 620px;
+  min-height: 600px;
+  padding: 40px;
 }
 
 .etiquette {
   display: inline-block;
-  background-color: #ffdf9e;
-  color: #574000;
-  border-radius: 999px;
-  padding: 4px 10px;
-  font-size: 12px;
+  background-color: var(--accent);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 11px;
   font-weight: 700;
-  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(225, 29, 72, 0.4);
 }
 
 .promo-contenu h3 {
-  font-size: 30px;
-  margin-bottom: 8px;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.2;
 }
 
 .promo-petite .promo-contenu h3 {
   font-size: 24px;
+  font-weight: 700;
 }
 
 .promo-contenu p {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+  color: #cbd5e1;
+  font-size: 15px;
 }
 
 .lien-promo {
-  color: #93c5fd;
+  color: #818cf8;
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-smooth);
+}
+
+.carte-promo:hover .lien-promo {
+  color: #ffffff;
+  gap: 10px;
 }
 
 @media (max-width: 992px) {
   .hero-contenu {
     flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-boutons {
+    justify-content: center;
   }
 
   .grille-promo {
@@ -271,14 +369,14 @@
   .categories,
   .ventes-flash,
   .section-promo {
-    padding: 40px 18px;
+    padding: 60px 20px;
   }
 
   .hero-texte h1 {
-    font-size: 34px;
+    font-size: 36px;
   }
 
   .grille-produits {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 }

@@ -1,59 +1,82 @@
-/* --- Catégories (version simple) --- */
+/* --- Catégories (version moderne) --- */
 .categories-detail {
-  padding: 56px 40px;
-  background-color: #fff;
+  padding: 80px 40px;
+  background-color: var(--bg-color);
 }
 
 .grille-categories-detail {
-  margin-top: 32px;
+  margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .categorie-card {
-  background-color: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.categorie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: #cbd5e1;
 }
 
 .categorie-card img {
   width: 100%;
-  height: 190px;
+  height: 200px;
   object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.categorie-card:hover img {
+  transform: scale(1.03);
 }
 
 .categorie-card h3 {
-  padding: 16px 16px 8px;
+  padding: 20px 20px 8px;
   font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color);
+  transition: var(--transition-smooth);
+}
+
+.categorie-card:hover h3 {
   color: var(--primary);
 }
 
 .categorie-card p {
-  padding: 0 16px 14px;
+  padding: 0 20px 20px;
   color: var(--text-light);
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .bouton-categorie {
-  margin: 0 16px 16px;
-  padding: 10px 14px;
-  border-radius: 8px;
-  background-color: #ffdf9e;
-  color: #574000;
+  margin: auto 20px 20px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background-color: #f1f5f9;
+  color: var(--text-color);
   font-weight: 700;
   text-align: center;
+  transition: var(--transition-smooth);
 }
 
 .bouton-categorie:hover {
-  background-color: #ffd070;
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
 }
 
 @media (max-width: 768px) {
   .categories-detail {
-    padding: 40px 18px;
+    padding: 60px 20px;
   }
 }
