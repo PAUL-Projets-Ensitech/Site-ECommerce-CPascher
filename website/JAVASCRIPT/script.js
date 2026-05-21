@@ -153,19 +153,19 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
             .then(data => {
                 if (data.success && data.client && data.client.prenom) {
-                    boutonProfil.innerHTML = `👤<span style="font-size: 12px; display: block; line-height: 1; margin-top: 4px;">${data.client.prenom}</span>`;
+                    boutonProfil.innerHTML = `👤<span style="font-size: 13px; font-weight: 600; margin-left: 2px;">${data.client.prenom}</span>`;
                     boutonProfil.addEventListener('click', () => {
                         window.location.href = isInHtmlFolder ? 'mon-compte.html' : 'HTML/mon-compte.html';
                     });
                 } else {
-                    boutonProfil.innerHTML = `👤<span style="font-size: 12px; display: block; line-height: 1; margin-top: 4px;">Connexion</span>`;
+                    boutonProfil.innerHTML = `👤<span style="font-size: 13px; font-weight: 600; margin-left: 2px;">Connexion</span>`;
                     boutonProfil.addEventListener('click', () => {
                         window.location.href = isInHtmlFolder ? 'connexion.html' : 'HTML/connexion.html';
                     });
                 }
             })
             .catch(() => {
-                boutonProfil.innerHTML = `👤<span style="font-size: 12px; display: block; line-height: 1; margin-top: 4px;">Connexion</span>`;
+                boutonProfil.innerHTML = `👤<span style="font-size: 13px; font-weight: 600; margin-left: 2px;">Connexion</span>`;
                 boutonProfil.addEventListener('click', () => {
                     window.location.href = isInHtmlFolder ? 'connexion.html' : 'HTML/connexion.html';
                 });
