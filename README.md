@@ -24,6 +24,7 @@ Les diagrammes ont été modélisés et exportés depuis le site **draw.io / dia
 ### Aperçu des Diagrammes (UML + Use Case)
 
 Le visuel ci-dessous présente :
+
 - **En haut** : le diagramme de classes UML (entités `Client`, `Commande`, `Produit`, `Catégorie` et leurs relations).
 - **En bas** : le diagramme de cas d'utilisation (acteurs `Visiteur` et `Client`, et leurs interactions avec le système).
 
