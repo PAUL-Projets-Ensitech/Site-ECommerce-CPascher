@@ -63,3 +63,20 @@ CREATE TABLE CONTENIR (
         FOREIGN KEY (id_produit) REFERENCES PRODUIT(id_produit)
         ON DELETE CASCADE
 );
+
+-- Création de la table "AVIS"
+CREATE TABLE AVIS (
+    id_avis INT AUTO_INCREMENT PRIMARY KEY,
+    id_client INT NOT NULL,
+    id_produit INT NOT NULL,
+    note INT NOT NULL,
+    commentaire TEXT NOT NULL,
+    date_avis DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_avis_client
+        FOREIGN KEY (id_client) REFERENCES CLIENT(id_client)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_avis_produit
+        FOREIGN KEY (id_produit) REFERENCES PRODUIT(id_produit)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT uq_avis_client_produit UNIQUE (id_client, id_produit)
+);
